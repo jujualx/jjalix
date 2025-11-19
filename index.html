@@ -6,80 +6,121 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Your Name</h1>
-      <p class="tagline">Creative Designer • Branding / UI / Illustration</p>
-      <p class="intro">
-        I design thoughtful, visually-driven experiences that help brands tell their story.
-      </p>
-      <div class="hero-links">
-        <a href="#work">View selected work ↓</a>
-        <a href="mailto:youremail@email.com">Contact me</a>
+
+  <!-- Top Navigation (Optional – matches Blush style) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-mark"></span>
+        <span class="logo-text">Your Name</span>
       </div>
+
+      <nav class="nav">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <main>
-    <section id="work" class="section">
+  <!-- Hero Section (Blush-inspired) -->
+  <section class="hero">
+    <div class="container hero-inner">
+
+      <!-- Left Side: Text -->
+      <div class="hero-text">
+        <p class="eyebrow">Creative Designer</p>
+
+        <h1>
+          I design clean, thoughtful visuals for brands & digital products.
+        </h1>
+
+        <p class="hero-subtitle">
+          Specializing in <strong>UI design, mobile interfaces, branding,</strong> and playful visuals.
+        </p>
+
+        <div class="hero-links">
+          <a href="#work">See my work</a>
+          <a href="#contact">Contact me</a>
+        </div>
+      </div>
+
+      <!-- Right Side: Visual Placeholder (You will add Figma screenshots here later) -->
+      <div class="hero-visual">
+        <p style="
+          margin: 0;
+          font-size: 0.9rem;
+          color: #6e628b;
+          text-align: center;
+        ">
+          Add your Figma homepage or mobile design preview here ✨<br>
+          (just replace this with an <img> later)
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Selected Work -->
+  <section id="work" class="section">
+    <div class="container">
       <h2>Selected Work</h2>
+
       <div class="grid">
+
         <article class="project">
           <h3>Project Title 01</h3>
-          <p>Short 1–2 sentence description of the project, client, and your role.</p>
-          <p class="tags">Branding • Visual Design</p>
+          <p>Short description of the project + your role.</p>
+          <p class="tags">UI Design • Mobile</p>
         </article>
+
         <article class="project">
           <h3>Project Title 02</h3>
-          <p>Short 1–2 sentence description of the project, client, and your role.</p>
-          <p class="tags">UI Design • Web</p>
+          <p>Short description of the project + your role.</p>
+          <p class="tags">Branding • Visual Design</p>
         </article>
+
         <article class="project">
           <h3>Project Title 03</h3>
-          <p>Short 1–2 sentence description of the project, client, and your role.</p>
-          <p class="tags">Packaging • Illustration</p>
+          <p>Short description of the project + your role.</p>
+          <p class="tags">Web Design • UI/UX</p>
         </article>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="about" class="section">
-      <h2>About</h2>
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me</h2>
       <p>
-        I’m a creative designer focused on [branding / digital / product]. I enjoy turning ideas
-        into clean, thoughtful visuals that feel both intentional and human.
+        I’m a designer who loves creating modern, clean, and playful visual experiences.
       </p>
       <p>
-        I’ve worked on [freelance / in-house / agency] projects for [types of clients or industries].
+        My work blends creativity and structure — balancing aesthetic design with user-centered thinking.
       </p>
-    </section>
+    </div>
+  </section>
 
-    <section id="skills" class="section">
-      <h2>Skills & Tools</h2>
-      <ul class="pill-list">
-        <li>Brand Identity</li>
-        <li>UI Design</li>
-        <li>Social Media Graphics</li>
-        <li>Presentation Design</li>
-        <li>Figma</li>
-        <li>Adobe Photoshop</li>
-        <li>Adobe Illustrator</li>
-        <li>Canva</li>
-      </ul>
-    </section>
-
-    <section id="contact" class="section">
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
       <h2>Let’s work together</h2>
-      <p>Reach out for collaborations, freelance work, or just to say hi.</p>
+      <p>Open to freelance projects, collaborations, or full-time opportunities.</p>
+
       <ul class="links-list">
         <li><a href="mailto:youremail@email.com">youremail@email.com</a></li>
-        <li><a href="https://www.behance.net/" target="_blank">Behance</a></li>
-        <li><a href="https://dribbble.com/" target="_blank">Dribbble</a></li>
-        <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+        <li><a href="#" target="_blank">Behance</a></li>
+        <li><a href="#" target="_blank">Dribbble</a></li>
+        <li><a href="#" target="_blank">Instagram</a></li>
       </ul>
-    </section>
-  </main>
+    </div>
+  </section>
 
+  <!-- Footer -->
   <footer class="footer">
     <p>© <span id="year"></span> Your Name. All rights reserved.</p>
   </footer>
@@ -87,5 +128,6 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
