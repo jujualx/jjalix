@@ -2,559 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BusyBee • Product Design Case Study</title>
+  <title>BusyBee – Productivity App | Julia Alix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
+  <!-- Page-specific tweaks so we don't break the main site -->
   <style>
-    :root {
-      --bg: #050816;
-      --bg-soft: #0b1020;
-      --bg-softer: #11182a;
-      --accent: #ffc857;
-      --accent-soft: rgba(255, 200, 87, 0.14);
-      --accent-2: #8c7bff;
-      --accent-3: #68e0cf;
-      --text-main: #f9fafb;
-      --text-muted: #9ca3af;
-      --border-subtle: rgba(148, 163, 184, 0.18);
-      --radius-xl: 1.75rem;
-      --radius-lg: 1.25rem;
-      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.7);
-      --shadow-orb: 0 18px 40px rgba(0, 0, 0, 0.9);
-      --max-width: 1080px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: radial-gradient(circle at top, #181c3a 0, #050816 45%);
-      color: var(--text-main);
-      font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .page {
-      width: 100%;
-      max-width: var(--max-width);
+    .project-page {
+      max-width: 900px;
       margin: 0 auto;
-      padding: 1.75rem 1.25rem 3rem;
+      padding-top: 2.5rem;
+      padding-bottom: 3rem;
     }
 
-    @media (min-width: 900px) {
-      .page {
-        padding: 2.5rem 0 4rem;
-      }
+    .project-page h2 {
+      font-size: clamp(1.9rem, 2.4vw, 2.2rem);
+      margin-bottom: 0.4rem;
     }
 
-    /* Header / Back link */
-
-    .top-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 1.75rem;
-    }
-
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.5rem 0.9rem;
-      border-radius: 999px;
-      border: 1px solid var(--border-subtle);
-      color: var(--text-muted);
-      text-decoration: none;
+    .project-page .tags {
       font-size: 0.9rem;
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(10px);
-      transition: all 0.2s ease;
-    }
-
-    .back-link span.chevron {
-      font-size: 1rem;
-      transform: translateY(0.5px);
-    }
-
-    .back-link:hover {
-      border-color: rgba(248, 250, 252, 0.6);
-      color: var(--text-main);
-      transform: translateY(-1px);
-    }
-
-    .page-tag {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
-    /* Hero */
-
-    .hero {
-      position: relative;
-      border-radius: 2rem;
-      padding: 1.75rem 1.5rem 1.8rem;
-      background:
-        radial-gradient(circle at top right, rgba(140, 123, 255, 0.35), transparent 55%),
-        radial-gradient(circle at -10% 140%, rgba(104, 224, 207, 0.4), transparent 55%),
-        linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.95));
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
-      gap: 1.75rem;
-      align-items: center;
-    }
-
-    @media (max-width: 800px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-        padding: 1.5rem;
-      }
-    }
-
-    .hero-main {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.25rem 0.8rem;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      color: var(--accent);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      margin-bottom: 0.85rem;
-    }
-
-    .hero-pill-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 16px rgba(255, 200, 87, 0.9);
-    }
-
-    .hero-title {
-      font-size: clamp(2rem, 2.5vw + 1rem, 2.7rem);
-      line-height: 1.1;
-      letter-spacing: -0.04em;
-      margin: 0 0 0.45rem;
-    }
-
-    .hero-subtitle {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-      max-width: 30rem;
-      line-height: 1.6;
-      margin-bottom: 1.25rem;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 1.4rem;
-    }
-
-    .meta-pill {
-      font-size: 0.85rem;
-      padding: 0.45rem 0.8rem;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.82);
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      color: var(--text-muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .meta-label {
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.72rem;
-      color: rgba(148, 163, 184, 0.95);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-    }
-
-    .button-primary,
-    .button-ghost {
-      border-radius: 999px;
-      padding: 0.65rem 1.15rem;
-      font-size: 0.9rem;
-      border: 1px solid transparent;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.18s ease;
-      white-space: nowrap;
-    }
-
-    .button-primary {
-      background: linear-gradient(135deg, #ffc857, #ff9a5a);
-      color: #111827;
-      box-shadow: 0 16px 35px rgba(15, 23, 42, 0.85);
-      font-weight: 600;
-    }
-
-    .button-primary:hover {
-      transform: translateY(-1.5px) translateX(0.5px);
-      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.95);
-    }
-
-    .button-ghost {
-      background: rgba(15, 23, 42, 0.7);
-      border-color: rgba(148, 163, 184, 0.7);
-      color: var(--text-main);
-    }
-
-    .button-ghost:hover {
-      border-color: #e5e7eb;
-      background: rgba(15, 23, 42, 0.9);
-    }
-
-    .button-icon {
-      font-size: 1rem;
-      transform: translateY(0.5px);
-    }
-
-    /* Hero visual / 3D-ish card */
-
-    .hero-visual-wrapper {
-      position: relative;
-    }
-
-    .hero-orbit {
-      position: absolute;
-      inset: -18%;
-      background:
-        radial-gradient(circle at top, rgba(255, 255, 255, 0.06), transparent 50%),
-        radial-gradient(circle at bottom, rgba(8, 47, 73, 0.5), transparent 60%);
-      filter: blur(6px);
       opacity: 0.8;
-      z-index: 1;
+      margin-bottom: 1.5rem;
     }
 
-    .hero-card {
-      position: relative;
-      z-index: 2;
-      border-radius: 1.75rem;
-      padding: 1rem 1rem 1.15rem;
-      background:
-        radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 60%),
-        linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.96));
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      transform: translate3d(0, 0, 0);
-      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    .project-cover {
+      margin-top: 1rem;
+      border-radius: 24px;
+      max-width: 720px;
+      width: 100%;
+      display: block;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.35);
     }
 
-    .hero-card:hover {
-      transform: translate3d(-4px, -8px, 0) rotate3d(1, 1, 0, 4deg);
-      box-shadow: 0 26px 60px rgba(15, 23, 42, 0.98);
+    .project-body {
+      margin-top: 1.75rem;
+      max-width: 720px;
     }
 
-    .hero-card-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
+    .project-body h3 {
+      margin-top: 1.75rem;
+      margin-bottom: 0.4rem;
     }
 
-    .hero-avatar {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .avatar-orb {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #ffe0a3, #ff7a7a 40%, #8f5bff 85%);
-      box-shadow:
-        0 0 0 1px rgba(15, 23, 42, 0.9),
-        var(--shadow-orb);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .avatar-orb::after {
-      content: "";
-      position: absolute;
-      inset: 14%;
-      border-radius: inherit;
-      background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.45), transparent 60%);
-      mix-blend-mode: screen;
-      opacity: 0.9;
-    }
-
-    .avatar-text {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .avatar-name {
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    .avatar-role {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .status-pill {
-      font-size: 0.75rem;
-      padding: 0.2rem 0.55rem;
-      border-radius: 999px;
-      background: rgba(22, 101, 52, 0.18);
-      border: 1px solid rgba(34, 197, 94, 0.7);
-      color: #bbf7d0;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      white-space: nowrap;
-    }
-
-    .status-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
-    }
-
-    .hero-card-body {
-      border-radius: 1.25rem;
-      padding: 0.8rem 0.85rem;
-      background: radial-gradient(circle at top left, rgba(140, 123, 255, 0.3), transparent 70%);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 0.6rem;
-      align-items: center;
-    }
-
-    @media (max-width: 480px) {
-      .hero-card-body {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .card-preview-title {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: rgba(226, 232, 240, 0.8);
-      margin-bottom: 0.1rem;
-    }
-
-    .card-preview-main {
-      font-size: 0.95rem;
-      font-weight: 500;
-      margin-bottom: 0.2rem;
-    }
-
-    .card-preview-sub {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .card-pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      justify-content: flex-end;
-    }
-
-    .card-pill {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: rgba(15, 23, 42, 0.78);
-      color: rgba(226, 232, 240, 0.9);
-    }
-
-    .hero-card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.6rem;
-      margin-top: 0.1rem;
-    }
-
-    .progress-label {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .progress-bar {
-      position: relative;
-      height: 6px;
-      flex: 1;
-      border-radius: 999px;
-      background: rgba(30, 64, 175, 0.6);
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      position: absolute;
-      inset: 0;
-      width: 76%;
-      border-radius: inherit;
-      background: linear-gradient(90deg, #22c55e, #a3e635, #facc15);
-    }
-
-    /* Content sections */
-
-    .content {
-      margin-top: 2.4rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2.3rem;
-    }
-
-    section {
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--border-subtle);
-      background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.12), transparent 60%), rgba(15, 23, 42, 0.9);
-      padding: 1.4rem 1.35rem 1.5rem;
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.7);
-    }
-
-    @media (min-width: 900px) {
-      section {
-        padding: 1.6rem 1.8rem 1.8rem;
-      }
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .section-title-block {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
-
-    .section-eyebrow {
-      font-size: 0.78rem;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-    }
-
-    .section-title {
-      font-size: 1.1rem;
-      letter-spacing: -0.02em;
-    }
-
-    .section-tagline {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .section-grid {
-      display: grid;
-      gap: 1.4rem;
-    }
-
-    @media (min-width: 800px) {
-      .section-grid.two-col {
-        grid-template-columns: 1.5fr 1.2fr;
-      }
-    }
-
-    .section-body p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
+    .project-body p,
+    .project-body li {
       line-height: 1.7;
-      margin: 0 0 0.85rem;
     }
 
-    .section-body p:last-child {
-      margin-bottom: 0;
+    .project-body ul {
+      padding-left: 1.1rem;
+      margin-top: 0.5rem;
     }
 
-    .info-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 0.55rem;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .info-list strong {
-      color: var(--text-main);
-      font-weight: 500;
-    }
-
-    /* Process with 3D-ish icons */
-
+    /* 3D-ish process grid */
     .process-grid {
       display: grid;
-      gap: 1.2rem;
-    }
-
-    @media (min-width: 800px) {
-      .process-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.3rem;
+      margin-top: 1rem;
     }
 
     .process-step {
       position: relative;
-      border-radius: var(--radius-lg);
-      padding: 1.05rem 0.9rem 1rem;
+      border-radius: 18px;
+      padding: 1rem 0.95rem 1.05rem;
       background:
-        radial-gradient(circle at top left, rgba(255, 200, 87, 0.16), transparent 55%),
-        radial-gradient(circle at bottom right, rgba(140, 123, 255, 0.2), transparent 60%),
-        linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.96));
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.95);
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.18), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(107, 70, 193, 0.4), transparent 65%),
+        rgba(20, 16, 39, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
       overflow: hidden;
       transform: translate3d(0, 0, 0);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -562,606 +80,280 @@
 
     .process-step:hover {
       transform: translate3d(-3px, -6px, 0) rotate3d(1, 1, 0, 5deg);
-      box-shadow: 0 24px 60px rgba(15, 23, 42, 1);
+      box-shadow: 0 26px 60px rgba(15, 23, 42, 1);
     }
 
-    .step-orb {
-      width: 52px;
-      height: 52px;
-      border-radius: 1.4rem;
-      background: radial-gradient(circle at 30% 20%, #fff7e1, #ffc857 45%, #ff7a7a 75%);
-      box-shadow:
-        0 0 0 1px rgba(15, 23, 42, 0.95),
-        0 18px 35px rgba(15, 23, 42, 0.98);
+    .process-step h4 {
+      margin-top: 0.55rem;
+      margin-bottom: 0.25rem;
+      font-size: 1rem;
+    }
+
+    .process-step p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .process-icon-3d {
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
-      font-size: 1rem;
-      color: #111827;
+      margin-bottom: 0.4rem;
       position: relative;
-      margin-bottom: 0.3rem;
+      overflow: hidden;
+      box-shadow:
+        0 0 0 1px rgba(15, 23, 42, 0.95),
+        0 18px 35px rgba(15, 23, 42, 0.95);
     }
 
-    .step-orb::after {
+    .process-icon-3d::after {
       content: "";
       position: absolute;
       inset: 18%;
       border-radius: inherit;
-      background: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.65), transparent 60%);
+      background: radial-gradient(
+        circle at 25% 25%,
+        rgba(255, 255, 255, 0.65),
+        transparent 60%
+      );
       mix-blend-mode: screen;
     }
 
-    .step-orb.step-2 {
-      background: radial-gradient(circle at 30% 20%, #f0f9ff, #8c7bff 50%, #ff7ad9 90%);
+    .process-icon-emoji {
+      position: relative;
+      font-size: 1.7rem;
     }
 
-    .step-orb.step-3 {
+    /* Per-step gradient vibes (similar to your avatar style) */
+    .icon-brain {
+      background: radial-gradient(circle at 30% 20%, #fff7e1, #ffc857 45%, #ff7a7a 80%);
+    }
+
+    .icon-bulb {
+      background: radial-gradient(circle at 25% 20%, #f0f9ff, #8c7bff 50%, #ff7ad9 85%);
+    }
+
+    .icon-puzzle {
       background: radial-gradient(circle at 30% 20%, #ecfeff, #68e0cf 50%, #22d3ee 95%);
     }
 
-    .step-orb.step-4 {
+    .icon-pencil {
       background: radial-gradient(circle at 30% 20%, #f5f3ff, #fb7185 45%, #f97316 90%);
     }
 
-    .step-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: rgba(226, 232, 240, 0.9);
+    .icon-palette {
+      background: radial-gradient(circle at 30% 20%, #fdf2ff, #f97316 45%, #6366f1 90%);
     }
 
-    .step-title {
-      font-size: 0.98rem;
-      margin: 0;
+    .icon-phone {
+      background: radial-gradient(circle at 30% 20%, #eff6ff, #38bdf8 45%, #6366f1 90%);
     }
 
-    .step-text {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin: 0;
+    /* Figma block */
+    .figma-block {
+      margin-top: 2rem;
+      max-width: 900px;
     }
 
-    /* Highlights */
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-bottom: 0.6rem;
+    .figma-frame-wrap {
+      margin-top: 0.8rem;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(53, 33, 83, 0.22);
     }
 
-    .chip {
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      padding: 0.25rem 0.65rem;
-      font-size: 0.78rem;
-      color: rgba(226, 232, 240, 0.95);
-      background: rgba(15, 23, 42, 0.9);
+    .figma-frame-wrap iframe {
+      border: 0;
+      width: 100%;
+      height: 520px;
+      display: block;
     }
 
-    .highlight-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 0.65rem;
+    .project-back-link {
+      margin-top: 2.5rem;
       font-size: 0.9rem;
-      color: var(--text-muted);
+      display: inline-block;
     }
 
-    .highlight-list li::before {
-      content: "•";
-      color: var(--accent);
-      margin-right: 0.4rem;
-    }
-
-    /* Outcome / Metrics */
-
-    .metrics-grid {
-      display: grid;
-      gap: 1rem;
-    }
-
-    @media (min-width: 700px) {
-      .metrics-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+    @media (max-width: 640px) {
+      .project-page {
+        padding-top: 2rem;
+        padding-inline: 0.5rem;
       }
-    }
-
-    .metric-card {
-      border-radius: 1.1rem;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      padding: 0.9rem 0.9rem 1rem;
-      background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.15), transparent 55%), rgba(15, 23, 42, 0.9);
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .metric-label {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .metric-value {
-      font-size: 1.4rem;
-      font-weight: 600;
-    }
-
-    .metric-note {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    /* Gallery */
-
-    .gallery-grid {
-      display: grid;
-      gap: 0.75rem;
-    }
-
-    @media (min-width: 800px) {
-      .gallery-grid {
-        grid-template-columns: 1.4fr 1fr;
-      }
-    }
-
-    .gallery-main,
-    .gallery-side {
-      display: grid;
-      gap: 0.75rem;
-    }
-
-    @media (min-width: 800px) {
-      .gallery-side {
-        grid-template-rows: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    .gallery-card {
-      border-radius: 1.2rem;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.98));
-      padding: 0.75rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      min-height: 140px;
-    }
-
-    .gallery-thumb {
-      flex: 1;
-      border-radius: 0.9rem;
-      background:
-        linear-gradient(135deg, rgba(255, 200, 87, 0.35), rgba(140, 123, 255, 0.45)),
-        repeating-linear-gradient(
-          135deg,
-          rgba(15, 23, 42, 0.9),
-          rgba(15, 23, 42, 0.9) 3px,
-          rgba(31, 41, 55, 0.9) 3px,
-          rgba(31, 41, 55, 0.9) 6px
-        );
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
-    }
-
-    .gallery-caption-title {
-      font-size: 0.9rem;
-    }
-
-    .gallery-caption-text {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    /* Footer nav */
-
-    .case-nav {
-      margin-top: 1.8rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .case-nav a {
-      text-decoration: none;
-      color: var(--text-main);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      border-radius: 999px;
-      padding: 0.45rem 0.85rem;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: rgba(15, 23, 42, 0.9);
-      transition: all 0.18s ease;
-    }
-
-    .case-nav a:hover {
-      border-color: #e5e7eb;
-      transform: translateY(-1px);
-    }
-
-    .case-nav span.arrow {
-      font-size: 1rem;
     }
   </style>
 </head>
 <body>
-  <main class="page">
-    <header class="top-bar">
-      <a href="index.html" class="back-link">
-        <span class="chevron">←</span>
-        <span>Back to portfolio</span>
-      </a>
-      <span class="page-tag">Case Study</span>
-    </header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-main">
-        <div class="hero-pill">
-          <span class="hero-pill-dot"></span>
-          <span>BusyBee • Product Design</span>
-        </div>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-mark"></span>
+        <span class="logo-text">Julia Alix</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-        <h1 class="hero-title">Keeping busy people calmly in control.</h1>
-        <p class="hero-subtitle">
-          BusyBee is a mobile-first task and scheduling assistant that helps freelancers and small teams see
-          what matters <em>now</em>—without drowning in notifications and cluttered to-do lists.
+  <!-- Project Section -->
+  <section class="section">
+    <div class="container project-page">
+      <h2>BusyBee – Productivity App</h2>
+      <p class="tags">UI Design • Mobile App • Prototype</p>
+
+      <!-- Cover image -->
+      <img
+        src="Busybee_Cover.png"
+        alt="BusyBee productivity app cover"
+        class="project-cover"
+      />
+
+      <div class="project-body">
+        <h3>Overview</h3>
+        <p>
+          BusyBee is a productivity app that helps users stay on top of tasks,
+          manage their time, and keep focused using a bright, playful visual language.
         </p>
 
-        <div class="hero-meta">
-          <div class="meta-pill">
-            <span class="meta-label">Role</span>
-            <span>End-to-end Product Designer</span>
-          </div>
-          <div class="meta-pill">
-            <span class="meta-label">Timeline</span>
-            <span>8 weeks • 2024</span>
-          </div>
-          <div class="meta-pill">
-            <span class="meta-label">Focus</span>
-            <span>UX / UI · Design System · Prototype</span>
-          </div>
-        </div>
+        <h3>My Role</h3>
+        <p>
+          UI design, visual direction, layout, and interaction design for the core screens.
+        </p>
 
-        <div class="hero-actions">
-          <a href="#" class="button-primary">
-            <span>View prototype</span>
-            <span class="button-icon">↗</span>
-          </a>
-          <a href="#process" class="button-ghost">
-            <span>Jump to process</span>
-          </a>
-        </div>
-      </div>
+        <h3>Goals</h3>
+        <ul>
+          <li>Keep the interface simple and friendly for everyday use.</li>
+          <li>Make task management feel light instead of overwhelming.</li>
+          <li>Use a strong, memorable color system to support the “bee” concept.</li>
+        </ul>
 
-      <div class="hero-visual-wrapper">
-        <div class="hero-orbit"></div>
-        <div class="hero-card">
-          <div class="hero-card-header">
-            <div class="hero-avatar">
-              <div class="avatar-orb"></div>
-              <div class="avatar-text">
-                <span class="avatar-name">BusyBee</span>
-                <span class="avatar-role">Day overview</span>
-              </div>
-            </div>
-            <div class="status-pill">
-              <span class="status-dot"></span>
-              <span>Calm schedule</span>
-            </div>
-          </div>
+        <h3>Key Decisions</h3>
+        <ul>
+          <li>
+            Used a bold yellow base with strong contrast to make tasks and actions easy to scan.
+          </li>
+          <li>
+            Rounded shapes and soft shadows to keep the experience approachable and less “corporate”.
+          </li>
+          <li>
+            Clear typography hierarchy so priorities, deadlines, and next actions stand out at a glance.
+          </li>
+        </ul>
 
-          <div class="hero-card-body">
-            <div>
-              <div class="card-preview-title">Today</div>
-              <div class="card-preview-main">3 priorities • 2 deep work blocks</div>
-              <div class="card-preview-sub">
-                Meetings auto-clustered. Breaks protected. No double booking.
-              </div>
-            </div>
-            <div class="card-pill-row">
-              <span class="card-pill">Smart clustering</span>
-              <span class="card-pill">Focus blocks</span>
-              <span class="card-pill">Gentle nudges</span>
-            </div>
-          </div>
-
-          <div class="hero-card-footer">
-            <div class="progress-label">Day load</div>
-            <div class="progress-bar">
-              <div class="progress-fill"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTENT -->
-    <div class="content">
-
-      <!-- Overview -->
-      <section id="overview">
-        <div class="section-header">
-          <div class="section-title-block">
-            <span class="section-eyebrow">Overview</span>
-            <h2 class="section-title">Designing a calmer way to manage busy weeks.</h2>
-          </div>
-          <p class="section-tagline">
-            Turning scattered tasks, chats, and calendar invites into a single, friendly view.
-          </p>
-        </div>
-
-        <div class="section-grid two-col">
-          <div class="section-body">
-            <p>
-              Many freelancers and small business owners live across <strong>three or more apps</strong> just to keep
-              their week under control—task managers, calendar tools, and messaging apps. Important work gets buried under
-              noisy reminders and endless lists.
-            </p>
-            <p>
-              BusyBee brings tasks, time blocks, and reminders into one place. Instead of yet another to-do list,
-              it guides people to choose <strong>three daily priorities</strong>, auto-groups similar work, and protects
-              focus time with gentle nudges.
-            </p>
-            <p>
-              This case study focuses on the core experience: creating a weekly plan, seeing a calm day overview, and
-              adjusting on the fly without feeling overwhelmed.
-            </p>
-          </div>
-
-          <div>
-            <ul class="info-list">
-              <li><strong>Project type:</strong> Passion project / UX case study</li>
-              <li><strong>Deliverables:</strong> UX flows, wireframes, high-fidelity UI, interactive prototype</li>
-              <li><strong>Platform:</strong> Mobile-first, responsive web</li>
-              <li><strong>Tools:</strong> Figma, FigJam, Notion</li>
-              <li><strong>My role:</strong> Research, UX strategy, UI design, prototyping</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Process -->
-      <section id="process">
-        <div class="section-header">
-          <div class="section-title-block">
-            <span class="section-eyebrow">Process</span>
-            <h2 class="section-title">From chaos to a calm, friendly schedule.</h2>
-          </div>
-          <p class="section-tagline">
-            A simple four-step loop that mirrors how people actually plan their week.
-          </p>
-        </div>
+        <h3>Process</h3>
 
         <div class="process-grid">
-          <!-- Step 1 -->
-          <article class="process-step">
-            <div class="step-orb step-1">01</div>
-            <div class="step-label">Listen</div>
-            <h3 class="step-title">Discovery & patterns</h3>
-            <p class="step-text">
-              I started with short interviews and async surveys to understand how freelancers currently juggle tasks
-              and time. The main pattern: tools weren’t the problem—<strong>overloaded views</strong> and unclear
-              priorities were.
-            </p>
-          </article>
-
-          <!-- Step 2 -->
-          <article class="process-step">
-            <div class="step-orb step-2">02</div>
-            <div class="step-label">Frame</div>
-            <h3 class="step-title">Problem & flow mapping</h3>
-            <p class="step-text">
-              I mapped the journey from “new project” to “planned week” and defined a key UX goal:
-              help users pick <strong>today’s top three</strong> in under 30 seconds, starting from scattered inputs.
-            </p>
-          </article>
-
-          <!-- Step 3 -->
-          <article class="process-step">
-            <div class="step-orb step-3">03</div>
-            <div class="step-label">Shape</div>
-            <h3 class="step-title">Wireframes & prototypes</h3>
-            <p class="step-text">
-              I explored different ways to visualize a day—stacked cards, timeline ribbons, and compact tiles—then tested
-              a mid-fidelity prototype to see which layout felt clearest under “busy” scenarios.
-            </p>
-          </article>
-
-          <!-- Step 4 -->
-          <article class="process-step">
-            <div class="step-orb step-4">04</div>
-            <div class="step-label">Polish</div>
-            <h3 class="step-title">Visual design & microcopy</h3>
-            <p class="step-text">
-              I created a warm, slightly playful visual language that still feels professional. Microcopy leans on
-              <strong>gentle prompts</strong> instead of warnings—“Protect this focus block?” instead of “Conflict!”
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <!-- Design Highlights -->
-      <section id="highlights">
-        <div class="section-header">
-          <div class="section-title-block">
-            <span class="section-eyebrow">Design Highlights</span>
-            <h2 class="section-title">Little details that keep BusyBee feeling light.</h2>
-          </div>
-          <p class="section-tagline">
-            Reducing cognitive load through prioritization, grouping, and soft visual cues.
-          </p>
-        </div>
-
-        <div class="section-grid two-col">
-          <div>
-            <div class="pill-row">
-              <span class="chip">Three-priority rule</span>
-              <span class="chip">Smart grouping</span>
-              <span class="chip">Gentle nudges</span>
+          <div class="process-step">
+            <div class="process-icon-3d icon-brain">
+              <span class="process-icon-emoji">🧠</span>
             </div>
-            <ul class="highlight-list">
-              <li>
-                Each day starts with a “Pick your top 3” screen instead of a full backlog, so users anchor on what
-                really matters before opening the rest.
-              </li>
-              <li>
-                Tasks are auto-grouped by project and type (admin, creative, calls) with soft color accents—instead of
-                heavy labels or separate tabs.
-              </li>
-              <li>
-                When the day overfills, BusyBee doesn’t shout. It suggests trade-offs: <em>“This looks heavy. Move one
-                task to tomorrow?”</em>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <ul class="highlight-list">
-              <li>
-                Focus blocks are rendered as wider, calmer cards with a subtle glow, visually separating deep work from
-                quick tasks.
-              </li>
-              <li>
-                A “mode” toggle lets people flip between <strong>Day view</strong> and <strong>Energy view</strong>,
-                which reorganizes tasks based on mental load rather than time.
-              </li>
-              <li>
-                Micro-animations are minimal and purposeful: new priorities gently slide into place instead of bouncing
-                or popping aggressively.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Outcome -->
-      <section id="outcome">
-        <div class="section-header">
-          <div class="section-title-block">
-            <span class="section-eyebrow">Outcome</span>
-            <h2 class="section-title">Early tests, promising signals.</h2>
-          </div>
-          <p class="section-tagline">
-            Even as a concept project, feedback showed BusyBee’s calm approach resonated.
-          </p>
-        </div>
-
-        <div class="section-grid">
-          <div class="section-body">
+            <h4>Understand the problem</h4>
             <p>
-              I ran quick, remote usability sessions with a small group of freelancers and agency designers. The goal
-              wasn’t to measure exact metrics yet, but to see if BusyBee actually felt calmer than their current tools.
-            </p>
-            <p>
-              The strongest reactions were around the three-priority flow and the way BusyBee handled overloaded days.
-              People described it as <strong>“firm but kind”</strong>, which is exactly the tone I was aiming for.
-            </p>
-            <p>
-              If taken further, the next step would be to validate retention: do people still feel this calm after
-              three weeks of real work, not just a demo?
+              I listed common pain points around task management (forgetting deadlines,
+              feeling overwhelmed, scattered notes) and turned them into simple user needs.
             </p>
           </div>
 
-          <div class="metrics-grid">
-            <div class="metric-card">
-              <span class="metric-label">Task clarity</span>
-              <span class="metric-value">+42%</span>
-              <span class="metric-note">
-                Participants reported a clearer sense of “what to start with” compared to their current setup.
-              </span>
+          <div class="process-step">
+            <div class="process-icon-3d icon-bulb">
+              <span class="process-icon-emoji">💡</span>
             </div>
-            <div class="metric-card">
-              <span class="metric-label">Overwhelm moments</span>
-              <span class="metric-value">–35%</span>
-              <span class="metric-note">
-                Fewer mentions of feeling “behind” when walking through BusyBee’s day overview screens.
-              </span>
+            <h4>Explore concepts</h4>
+            <p>
+              I explored different metaphors for productivity and landed on the “bee” theme
+              to represent focus, movement, and small tasks adding up.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-icon-3d icon-puzzle">
+              <span class="process-icon-emoji">🧩</span>
             </div>
-            <div class="metric-card">
-              <span class="metric-label">Would use</span>
-              <span class="metric-value">9 / 10</span>
-              <span class="metric-note">
-                Said they would try BusyBee for at least a month if it existed as a real product.
-              </span>
+            <h4>Map flows & structure</h4>
+            <p>
+              I mapped a simple flow for creating tasks, viewing today’s priorities, and
+              checking progress so the app feels light to use every day.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-icon-3d icon-pencil">
+              <span class="process-icon-emoji">✏️</span>
             </div>
+            <h4>Wireframe the screens</h4>
+            <p>
+              I sketched low-fidelity layouts to decide where lists, filters, and calls to
+              action should live before committing to the final visuals.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-icon-3d icon-palette">
+              <span class="process-icon-emoji">🎨</span>
+            </div>
+            <h4>Refine visual design</h4>
+            <p>
+              I defined colors, typography, and iconography to keep the interface readable
+              while still feeling playful and on-brand for BusyBee.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-icon-3d icon-phone">
+              <span class="process-icon-emoji">📱</span>
+            </div>
+            <h4>Build the prototype</h4>
+            <p>
+              I created an interactive Figma prototype to test key flows like creating tasks,
+              switching views, and checking progress on the go.
+            </p>
           </div>
         </div>
-      </section>
 
-      <!-- Gallery -->
-      <section id="gallery">
-        <div class="section-header">
-          <div class="section-title-block">
-            <span class="section-eyebrow">Screens</span>
-            <h2 class="section-title">A quick peek at the UI.</h2>
-          </div>
-          <p class="section-tagline">
-            Replace these blocks with your actual BusyBee mockups when you’re ready.
+        <!-- Figma embed -->
+        <div class="figma-block">
+          <h3>Interactive prototype</h3>
+          <p style="color:#6e628b; font-size:0.9rem;">
+            You can explore the prototype directly from Figma below.
           </p>
-        </div>
 
-        <div class="gallery-grid">
-          <div class="gallery-main">
-            <div class="gallery-card">
-              <div class="gallery-thumb">
-                <!-- Replace background with real image via CSS or <img> -->
-              </div>
-              <div>
-                <div class="gallery-caption-title">Day overview & priorities</div>
-                <div class="gallery-caption-text">
-                  A single scrollable view that balances today’s top three priorities with quick tasks and focus blocks.
-                </div>
-              </div>
-            </div>
+          <div class="figma-frame-wrap">
+            <iframe
+              src="https://www.figma.com/proto/1Ezlj00vhgMC2QKL0pD3Mc/BusyBee-2023?node-id=5-2412&p=f&t=ecyi1yYCGOmV1qdK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A3070"
+              allowfullscreen
+            ></iframe>
           </div>
-          <div class="gallery-side">
-            <div class="gallery-card">
-              <div class="gallery-thumb"></div>
-              <div>
-                <div class="gallery-caption-title">Energy-based sorting</div>
-                <div class="gallery-caption-text">
-                  Tasks can be switched into “Energy view,” where work is organized by mental load instead of time slots.
-                </div>
-              </div>
-            </div>
-            <div class="gallery-card">
-              <div class="gallery-thumb"></div>
-              <div>
-                <div class="gallery-caption-title">Weekly planning flow</div>
-                <div class="gallery-caption-text">
-                  A lightweight, step-by-step planner for setting up the week without feeling like another big task.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- Case navigation -->
-      <div class="case-nav">
-        <span>That’s BusyBee. Ready to see what I did on the next project?</span>
-        <div>
-          <a href="index.html">
-            <span class="arrow">←</span>
-            <span>Back to all projects</span>
+          <a class="btn-pill"
+             href="https://www.figma.com/proto/1Ezlj00vhgMC2QKL0pD3Mc/BusyBee-2023?node-id=5-2412&p=f&t=ecyi1yYCGOmV1qdK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A3070"
+             target="_blank"
+             style="margin-top:1.3rem; display:inline-block;">
+            Open in Figma →
           </a>
-          <!-- Update this to the next project’s inner page when you have it -->
-          <a href="next-project.html">
-            <span>Next case study</span>
-            <span class="arrow">→</span>
-          </a>
+        </div>
+
+        <div class="project-back-link">
+          <a href="index.html#work">← Back to all projects</a>
         </div>
       </div>
     </div>
-  </main>
+  </section>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Julia Alix. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
