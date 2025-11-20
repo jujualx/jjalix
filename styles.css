@@ -379,3 +379,25 @@ a {
     box-shadow: 0 10px 30px rgba(53, 33, 83, 0.08);
   }
 }
+
+/* Process Icons */
+.process-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #ffe6f0, #fff5f9);
+  box-shadow: 0 8px 20px rgba(255, 100, 150, 0.15);
+}
+
+.process-icon svg {
+  width: 26px;
+  height: 26px;
+  stroke: #4b3b73;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
