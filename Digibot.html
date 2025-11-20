@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DigiBot – Application | Julia Alix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-mark"></span>
+        <span class="logo-text">Julia Alix</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Project Section -->
+  <section class="section">
+    <div class="container">
+      <h2>DigiBot – Application</h2>
+      <p class="tags">UI Design • Branding • Web App</p>
+
+      <!-- Cover image -->
+      <img
+        src="Digibot_Cover.png"
+        alt="DigiBot application cover artwork"
+        style="margin-top:1rem; border-radius:24px; max-width:720px;"
+      />
+
+      <div style="margin-top:1.5rem; max-width:720px;">
+        <h3>Overview</h3>
+        <p>
+          DigiBot is a concept application designed around digital creativity,
+          collaboration, and learning. The interface highlights a bold color palette,
+          playful illustration, and a clean layout that supports productive work
+          without feeling too serious.
+        </p>
+
+        <h3>My Role</h3>
+        <p>
+          Visual direction, UI design, layout, and creating the illustration-focused
+          hero section for the main experience.
+        </p>
+
+        <h3>Design Goals</h3>
+        <ul>
+          <li>Create a friendly, welcoming interface for creative users.</li>
+          <li>Use color and illustration to communicate energy and collaboration.</li>
+          <li>Keep the layout simple enough to support future feature growth.</li>
+        </ul>
+
+        <h3>Key Decisions</h3>
+        <ul>
+          <li>
+            A split layout with a strong hero illustration on the right to balance
+            typography and UI components on the left.
+          </li>
+          <li>
+            Rounded shapes, soft shadows, and warm accent colors to keep the brand
+            approachable.
+          </li>
+          <li>
+            Clear hierarchy between headings, supporting text, and calls to action.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Prototype / site embed -->
+      <div style="margin-top:2rem; max-width:900px;">
+        <h3>Live prototype</h3>
+        <p style="color:#6e628b; font-size:0.9rem;">
+          Explore the prototype and layout directly in the embedded page below.
+        </p>
+
+        <div style="margin-top:0.8rem; border-radius:24px; overflow:hidden; box-shadow:0 18px 45px rgba(53,33,83,0.12);">
+          <iframe
+            style="border:0; width:100%; height:520px;"
+            src="https://white-clock-43979981.figma.site/"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <a
+          class="btn-pill"
+          href="https://white-clock-43979981.figma.site/"
+          target="_blank"
+          style="margin-top:1.3rem; display:inline-block;"
+        >
+          Open project site →
+        </a>
+      </div>
+
+      <div style="margin-top:2.5rem;">
+        <a href="index.html#work" style="font-size:0.9rem;">← Back to all projects</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Julia Alix. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
