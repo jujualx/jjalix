@@ -120,7 +120,9 @@ img {
 
 /* ---- Hero ---- */
 .hero {
-  padding: 3.5rem 1.5rem 2rem;
+  padding: 3.5rem 1.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-inner {
@@ -128,6 +130,7 @@ img {
   grid-template-columns: minmax(0, 1.4fr);
   gap: 2.5rem;
   align-items: center;
+  min-height: 70vh;
 }
 
 @media (min-width: 820px) {
@@ -138,6 +141,10 @@ img {
 
 .hero-text {
   max-width: 560px;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeUp 0.7s ease-out forwards;
+  animation-delay: 0.05s;
 }
 
 .eyebrow {
@@ -168,6 +175,10 @@ img {
   flex-wrap: wrap;
   gap: 0.8rem;
   margin-top: 1.5rem;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeUp 0.7s ease-out forwards;
+  animation-delay: 0.18s;
 }
 
 .hero-links a {
@@ -204,7 +215,7 @@ img {
   background: var(--accent-soft);
 }
 
-/* Hero visual card */
+/* Hero visual card (avatar) */
 .hero-visual {
   background: #ffffff;
   border-radius: 32px;
@@ -213,6 +224,12 @@ img {
   border: 1px solid var(--border-subtle);
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(22px);
+  animation:
+    fadeUp 0.7s ease-out forwards,
+    heroFloat 6s ease-in-out 0.7s infinite;
+  animation-delay: 0.25s, 0.7s; /* enter first, then float */
 }
 
 .hero-visual::before {
@@ -257,19 +274,15 @@ img {
 }
 
 .project {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
   padding: 1.2rem 1.2rem 1rem;
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 30px rgba(53, 33, 83, 0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
-
-}
-.project .btn-pill {
-  margin-top: auto; /* pushes button to bottom */
-  align-self: flex-start;
 }
 
 .project:hover {
@@ -302,7 +315,7 @@ img {
 /* ---- Buttons ---- */
 .btn-pill {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: auto; /* push to bottom of card */
   padding: 0.6rem 1rem;
   border-radius: var(--radius-pill);
   background: linear-gradient(135deg, #ff9a8b, #ff6f91);
@@ -357,4 +370,36 @@ img {
   text-align: center;
   font-size: 0.82rem;
   color: var(--muted);
+}
+
+/* ---- Animations ---- */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-text,
+  .hero-links,
+  .hero-visual {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
 }
