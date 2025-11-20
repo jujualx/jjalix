@@ -5,186 +5,6 @@
   <title>BusyBee – Productivity App | Julia Alix</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- Page-specific tweaks so we don't break the main site -->
-  <style>
-    .project-page {
-      max-width: 900px;
-      margin: 0 auto;
-      padding-top: 2.5rem;
-      padding-bottom: 3rem;
-    }
-
-    .project-page h2 {
-      font-size: clamp(1.9rem, 2.4vw, 2.2rem);
-      margin-bottom: 0.4rem;
-    }
-
-    .project-page .tags {
-      font-size: 0.9rem;
-      opacity: 0.8;
-      margin-bottom: 1.5rem;
-    }
-
-    .project-cover {
-      margin-top: 1rem;
-      border-radius: 24px;
-      max-width: 720px;
-      width: 100%;
-      display: block;
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.35);
-    }
-
-    .project-body {
-      margin-top: 1.75rem;
-      max-width: 720px;
-    }
-
-    .project-body h3 {
-      margin-top: 1.75rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .project-body p,
-    .project-body li {
-      line-height: 1.7;
-    }
-
-    .project-body ul {
-      padding-left: 1.1rem;
-      margin-top: 0.5rem;
-    }
-
-    /* 3D-ish process grid */
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.3rem;
-      margin-top: 1rem;
-    }
-
-    .process-step {
-      position: relative;
-      border-radius: 18px;
-      padding: 1rem 0.95rem 1.05rem;
-      background:
-        radial-gradient(circle at top left, rgba(255, 255, 255, 0.18), transparent 55%),
-        radial-gradient(circle at bottom right, rgba(107, 70, 193, 0.4), transparent 65%),
-        rgba(20, 16, 39, 0.96);
-      border: 1px solid rgba(148, 163, 184, 0.55);
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
-      overflow: hidden;
-      transform: translate3d(0, 0, 0);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .process-step:hover {
-      transform: translate3d(-3px, -6px, 0) rotate3d(1, 1, 0, 5deg);
-      box-shadow: 0 26px 60px rgba(15, 23, 42, 1);
-    }
-
-    .process-step h4 {
-      margin-top: 0.55rem;
-      margin-bottom: 0.25rem;
-      font-size: 1rem;
-    }
-
-    .process-step p {
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-
-    .process-icon-3d {
-      width: 54px;
-      height: 54px;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 0.4rem;
-      position: relative;
-      overflow: hidden;
-      box-shadow:
-        0 0 0 1px rgba(15, 23, 42, 0.95),
-        0 18px 35px rgba(15, 23, 42, 0.95);
-    }
-
-    .process-icon-3d::after {
-      content: "";
-      position: absolute;
-      inset: 18%;
-      border-radius: inherit;
-      background: radial-gradient(
-        circle at 25% 25%,
-        rgba(255, 255, 255, 0.65),
-        transparent 60%
-      );
-      mix-blend-mode: screen;
-    }
-
-    .process-icon-emoji {
-      position: relative;
-      font-size: 1.7rem;
-    }
-
-    /* Per-step gradient vibes (similar to your avatar style) */
-    .icon-brain {
-      background: radial-gradient(circle at 30% 20%, #fff7e1, #ffc857 45%, #ff7a7a 80%);
-    }
-
-    .icon-bulb {
-      background: radial-gradient(circle at 25% 20%, #f0f9ff, #8c7bff 50%, #ff7ad9 85%);
-    }
-
-    .icon-puzzle {
-      background: radial-gradient(circle at 30% 20%, #ecfeff, #68e0cf 50%, #22d3ee 95%);
-    }
-
-    .icon-pencil {
-      background: radial-gradient(circle at 30% 20%, #f5f3ff, #fb7185 45%, #f97316 90%);
-    }
-
-    .icon-palette {
-      background: radial-gradient(circle at 30% 20%, #fdf2ff, #f97316 45%, #6366f1 90%);
-    }
-
-    .icon-phone {
-      background: radial-gradient(circle at 30% 20%, #eff6ff, #38bdf8 45%, #6366f1 90%);
-    }
-
-    /* Figma block */
-    .figma-block {
-      margin-top: 2rem;
-      max-width: 900px;
-    }
-
-    .figma-frame-wrap {
-      margin-top: 0.8rem;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 18px 45px rgba(53, 33, 83, 0.22);
-    }
-
-    .figma-frame-wrap iframe {
-      border: 0;
-      width: 100%;
-      height: 520px;
-      display: block;
-    }
-
-    .project-back-link {
-      margin-top: 2.5rem;
-      font-size: 0.9rem;
-      display: inline-block;
-    }
-
-    @media (max-width: 640px) {
-      .project-page {
-        padding-top: 2rem;
-        padding-inline: 0.5rem;
-      }
-    }
-  </style>
 </head>
 <body>
 
@@ -205,7 +25,7 @@
 
   <!-- Project Section -->
   <section class="section">
-    <div class="container project-page">
+    <div class="container">
       <h2>BusyBee – Productivity App</h2>
       <p class="tags">UI Design • Mobile App • Prototype</p>
 
@@ -213,10 +33,10 @@
       <img
         src="Busybee_Cover.png"
         alt="BusyBee productivity app cover"
-        class="project-cover"
+        style="margin-top:1rem; border-radius:24px; max-width:720px;"
       />
 
-      <div class="project-body">
+      <div style="margin-top:1.5rem; max-width:720px;">
         <h3>Overview</h3>
         <p>
           BusyBee is a productivity app that helps users stay on top of tasks,
@@ -251,98 +71,109 @@
         <h3>Process</h3>
 
         <div class="process-grid">
+
           <div class="process-step">
-            <div class="process-icon-3d icon-brain">
-              <span class="process-icon-emoji">🧠</span>
+            <div class="process-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M9 18h6m-5 3h4M12 2a7 7 0 0 0-7 7c0 2.9 1.7 5.4 4 6.6V17a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1.4c2.3-1.2 4-3.7 4-6.6a7 7 0 0 0-7-7Z"/>
+              </svg>
             </div>
             <h4>Understand the problem</h4>
             <p>
-              I listed common pain points around task management (forgetting deadlines,
-              feeling overwhelmed, scattered notes) and turned them into simple user needs.
+              Identified user pain points around task management and turned them into clear needs.
             </p>
           </div>
 
           <div class="process-step">
-            <div class="process-icon-3d icon-bulb">
-              <span class="process-icon-emoji">💡</span>
+            <div class="process-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2a6 6 0 0 0-6 6c0 2.4 1.4 4.5 3.4 5.4L9 18h6l-.4-4.6A6 6 0 0 0 18 8a6 6 0 0 0-6-6Z"/>
+              </svg>
             </div>
             <h4>Explore concepts</h4>
             <p>
-              I explored different metaphors for productivity and landed on the “bee” theme
-              to represent focus, movement, and small tasks adding up.
+              Explored different metaphors for productivity and selected the bee-themed direction.
             </p>
           </div>
 
           <div class="process-step">
-            <div class="process-icon-3d icon-puzzle">
-              <span class="process-icon-emoji">🧩</span>
+            <div class="process-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 3h6v6H4V3Zm10 0h6v6h-6V3Zm-10 10h6v6H4v-6Zm10 0h6v6h-6v-6Z"/>
+              </svg>
             </div>
             <h4>Map flows & structure</h4>
             <p>
-              I mapped a simple flow for creating tasks, viewing today’s priorities, and
-              checking progress so the app feels light to use every day.
+              Planned simple task flows for creating tasks, viewing today, and tracking progress.
             </p>
           </div>
 
           <div class="process-step">
-            <div class="process-icon-3d icon-pencil">
-              <span class="process-icon-emoji">✏️</span>
+            <div class="process-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 17l6-6m0 0l6 6m-6-6V3"/>
+              </svg>
             </div>
             <h4>Wireframe the screens</h4>
             <p>
-              I sketched low-fidelity layouts to decide where lists, filters, and calls to
-              action should live before committing to the final visuals.
+              Created low-fidelity layouts to define structure and hierarchy before visuals.
             </p>
           </div>
 
           <div class="process-step">
-            <div class="process-icon-3d icon-palette">
-              <span class="process-icon-emoji">🎨</span>
+            <div class="process-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 22a2 2 0 0 1-2-2V4a2 2 0 1 1 4 0v16a2 2 0 0 1-2 2Zm7-4V6a2 2 0 0 0-2-2h-1v16h1a2 2 0 0 0 2-2ZM7 20V4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1Z"/>
+              </svg>
             </div>
             <h4>Refine visual design</h4>
             <p>
-              I defined colors, typography, and iconography to keep the interface readable
-              while still feeling playful and on-brand for BusyBee.
+              Finalized color palette, typography, and UI components to match the BusyBee brand.
             </p>
           </div>
 
           <div class="process-step">
-            <div class="process-icon-3d icon-phone">
-              <span class="process-icon-emoji">📱</span>
+            <div class="process-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M16 2H8a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3Zm-4 18.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/>
+              </svg>
             </div>
             <h4>Build the prototype</h4>
             <p>
-              I created an interactive Figma prototype to test key flows like creating tasks,
-              switching views, and checking progress on the go.
+              Developed an interactive Figma prototype to test key flows and micro-interactions.
             </p>
           </div>
+
+        </div>
+      </div>
+
+      <!-- Figma embed -->
+      <div style="margin-top:2rem; max-width:900px;">
+        <h3>Interactive prototype</h3>
+        <p style="color:#6e628b; font-size:0.9rem;">
+          You can explore the prototype directly from Figma below.
+        </p>
+
+        <div style="margin-top:0.8rem; border-radius:24px; overflow:hidden; box-shadow:0 18px 45px rgba(53,33,83,0.12);">
+          <iframe
+            style="border:0; width:100%; height:520px;"
+            src="https://www.figma.com/proto/1Ezlj00vhgMC2QKL0pD3Mc/BusyBee-2023?node-id=5-2412&p=f&t=ecyi1yYCGOmV1qdK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A3070"
+            allowfullscreen
+          ></iframe>
         </div>
 
-        <!-- Figma embed -->
-        <div class="figma-block">
-          <h3>Interactive prototype</h3>
-          <p style="color:#6e628b; font-size:0.9rem;">
-            You can explore the prototype directly from Figma below.
-          </p>
+        <a
+          class="btn-pill"
+          href="https://www.figma.com/proto/1Ezlj00vhgMC2QKL0pD3Mc/BusyBee-2023?node-id=5-2412&p=f&t=ecyi1yYCGOmV1qdK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A3070"
+          target="_blank"
+          style="margin-top:1.3rem; display:inline-block;"
+        >
+          Open in Figma →
+        </a>
+      </div>
 
-          <div class="figma-frame-wrap">
-            <iframe
-              src="https://www.figma.com/proto/1Ezlj00vhgMC2QKL0pD3Mc/BusyBee-2023?node-id=5-2412&p=f&t=ecyi1yYCGOmV1qdK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A3070"
-              allowfullscreen
-            ></iframe>
-          </div>
-
-          <a class="btn-pill"
-             href="https://www.figma.com/proto/1Ezlj00vhgMC2QKL0pD3Mc/BusyBee-2023?node-id=5-2412&p=f&t=ecyi1yYCGOmV1qdK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A3070"
-             target="_blank"
-             style="margin-top:1.3rem; display:inline-block;">
-            Open in Figma →
-          </a>
-        </div>
-
-        <div class="project-back-link">
-          <a href="index.html#work">← Back to all projects</a>
-        </div>
+      <div style="margin-top:2.5rem;">
+        <a href="index.html#work" style="font-size:0.9rem;">← Back to all projects</a>
       </div>
     </div>
   </section>
