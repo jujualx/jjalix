@@ -323,6 +323,46 @@ a {
   50% { transform: translateY(-14px); }
 }
 
+/* ---- Process grid (case studies) ---- */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.4rem;
+  margin-top: 1rem;
+}
+
+.process-step {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1rem 1.1rem 1.1rem;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 26px rgba(53, 33, 83, 0.06);
+}
+
+.process-step h4 {
+  margin: 0.3rem 0 0.4rem;
+  font-size: 0.98rem;
+}
+
+.process-step p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.process-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  background: var(--accent-soft);
+  box-shadow: 0 10px 24px rgba(255, 111, 145, 0.25);
+}
+
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .hero-text,
