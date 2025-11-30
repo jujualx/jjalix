@@ -2,620 +2,212 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Julia Alix – Senior Designer</title>
+  <title>BusyBee – Productivity App | Julia Alix</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    :root {
-      --bg: #fff4fb;
-      --bg-soft: #ffe9f5;
-      --bg-card: rgba(255, 255, 255, 0.8);
-      --text-main: #111827;
-      --text-muted: #6b7280;
-      --accent: #ff9bb3;
-      --accent-strong: #ff7a7a;
-      --nav-bg: rgba(255, 245, 252, 0.96);
-      --shadow-soft: 0 18px 45px rgba(209, 118, 180, 0.18);
-      --shadow-card: 0 22px 50px rgba(148, 97, 182, 0.25);
-      --radius-xl: 2rem;
-      --radius-lg: 1.5rem;
-      --max-width: 1100px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
     body {
-      margin: 0;
+      background: #faf8fc;
+      font-family: "Inter", sans-serif;
+      color: #2b2345;
       padding: 0;
-      font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at top, #ffe9f5 0, #fff4fb 60%, #ffeef7 100%);
-      color: var(--text-main);
-      scroll-behavior: smooth;
+      margin: 0;
     }
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* Layout helpers */
-
-    .page {
+    .header-min {
       width: 100%;
-      max-width: var(--max-width);
+      padding: 24px 0;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #2b2345;
+    }
+
+    .project-container {
+      max-width: 820px;
       margin: 0 auto;
-      padding: 1.25rem 1.25rem 3rem;
+      padding: 40px 24px 120px;
+      text-align: center;
     }
 
-    @media (min-width: 900px) {
-      .page {
-        padding: 1.75rem 0 4rem;
-      }
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
     }
 
-    .section {
-      padding: 3rem 0 0;
+    .tags {
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      color: #7c6fa4;
+      margin-bottom: 2.5rem;
     }
 
-    .section-header {
+    img.project-cover {
+      width: 100%;
+      border-radius: 28px;
+      margin-bottom: 3rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-top: 3rem;
       margin-bottom: 1rem;
     }
 
-    .section-kicker {
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent-strong);
-    }
-
-    .section-title {
-      font-size: 1.55rem;
-      margin: 0.3rem 0 0.2rem;
-    }
-
-    .section-subtitle {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-      margin: 0;
-    }
-
-    /* Header */
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(20px);
-      background: var(--nav-bg);
-      border-bottom: 1px solid rgba(248, 209, 244, 0.9);
-    }
-
-    .header-inner {
-      width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0.75rem 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    @media (min-width: 900px) {
-      .header-inner {
-        padding-inline: 0;
-      }
-    }
-
-    .logo-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      padding: 0.4rem 0.9rem;
-      border-radius: 999px;
-      background: radial-gradient(circle at top left, #ffe6f3, #ffd0f0);
-      box-shadow: 0 12px 25px rgba(255, 171, 209, 0.55);
-    }
-
-    .logo-orb {
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #ffe7c4, #ff9b7a 45%, #ff7ab3 90%);
-      box-shadow:
-        0 0 0 1px rgba(255, 255, 255, 0.6),
-        0 10px 20px rgba(207, 119, 168, 0.65);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .logo-orb::after {
-      content: "";
-      position: absolute;
-      inset: 20%;
-      border-radius: inherit;
-      background: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.85), transparent 65%);
-      mix-blend-mode: screen;
-    }
-
-    .logo-text {
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #2b2438;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 1.75rem;
-      font-size: 0.95rem;
-    }
-
-    .nav a {
-      position: relative;
-      color: #4b445c;
-    }
-
-    .nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -0.25rem;
-      width: 0;
-      height: 2px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #ff9fb4, #ffb86b);
-      transition: width 0.18s ease;
-    }
-
-    .nav a:hover::after {
-      width: 100%;
-    }
-
-    @media (max-width: 640px) {
-      .nav {
-        gap: 1.1rem;
-        font-size: 0.9rem;
-      }
-    }
-
-    /* HERO */
-
-    .hero {
-      padding-top: 2.6rem;
-      padding-bottom: 3rem;
-    }
-
-    .hero-inner {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.15fr);
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    @media (max-width: 880px) {
-      .hero-inner {
-        grid-template-columns: minmax(0, 1fr);
-        padding-top: 1.5rem;
-      }
-    }
-
-    .hero-tag {
-      font-size: 0.78rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent-strong);
-      margin-bottom: 0.9rem;
-    }
-
-    .hero-title {
-      font-size: clamp(2.3rem, 3.7vw, 3.1rem);
-      line-height: 1.02;
-      letter-spacing: -0.04em;
-      margin: 0 0 0.75rem;
-      color: #151326;
-    }
-
-    .hero-title span.break {
-      display: block;
-    }
-
-    .hero-subtitle {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-      max-width: 27rem;
-      line-height: 1.6;
-      margin-bottom: 1.6rem;
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .btn-pill {
-      border-radius: 999px;
-      padding: 0.7rem 1.4rem;
-      font-size: 0.92rem;
-      border: 1px solid transparent;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.18s ease;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #ff9fb4, #ffb86b);
-      color: #23172b;
-      box-shadow: 0 18px 40px rgba(244, 143, 177, 0.6);
-      font-weight: 600;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1.5px) translateX(0.5px);
-      box-shadow: 0 22px 50px rgba(227, 119, 158, 0.75);
-    }
-
-    .btn-ghost {
-      background: rgba(255, 255, 255, 0.7);
-      border-color: rgba(221, 184, 214, 0.9);
-      color: #3a324a;
-    }
-
-    .btn-ghost:hover {
-      background: rgba(255, 255, 255, 0.9);
-      transform: translateY(-1px);
-    }
-
-    .hero-caption {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .hero-visual {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-avatar-frame {
-      position: relative;
-      border-radius: 2.3rem;
-      padding: 1.1rem;
-      background:
-        radial-gradient(circle at top, rgba(255, 255, 255, 0.95), rgba(255, 244, 251, 0.98));
-      box-shadow:
-        0 20px 50px rgba(220, 135, 187, 0.45),
-        0 0 0 1px rgba(255, 255, 255, 0.9);
-    }
-
-    .hero-avatar-frame img {
-      border-radius: 1.9rem;
-    }
-
-    .hero-orb {
-      position: absolute;
-      inset: -15%;
-      z-index: -1;
-      background:
-        radial-gradient(circle at top left, rgba(255, 210, 241, 0.7), transparent 60%),
-        radial-gradient(circle at bottom right, rgba(245, 204, 255, 0.6), transparent 70%);
-      filter: blur(8px);
-      opacity: 0.95;
-    }
-
-    /* WORK CARDS */
-
-    .work-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.6rem;
-      margin-top: 1.6rem;
-    }
-
-    .work-card {
-      position: relative;
-      border-radius: var(--radius-lg);
-      background:
-        radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent 60%),
-        radial-gradient(circle at bottom right, rgba(212, 180, 255, 0.55), transparent 70%),
-        linear-gradient(135deg, #251b40, #2b234d);
-      padding: 0.8rem 0.85rem 1rem;
-      box-shadow: var(--shadow-card);
-      color: #f9fafb;
-      transform: translate3d(0, 0, 0);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      overflow: hidden;
-    }
-
-    .work-card:hover {
-      transform: translate3d(-4px, -8px, 0) rotate3d(1, 1, 0, 4deg);
-      box-shadow: 0 26px 65px rgba(41, 22, 73, 0.9);
-    }
-
-    .work-thumb {
-      border-radius: 1.1rem;
-      overflow: hidden;
-      margin-bottom: 0.75rem;
-      box-shadow: 0 16px 35px rgba(12, 10, 35, 0.8);
-    }
-
-    .work-title {
-      margin: 0.2rem 0 0.3rem;
+    p, li {
       font-size: 1.05rem;
+      line-height: 1.75;
+      color: #3d355c;
     }
 
-    .work-desc {
-      font-size: 0.92rem;
-      color: rgba(229, 231, 235, 0.86);
-      margin: 0 0 0.4rem;
+    ul {
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto;
+      padding-left: 20px;
+      margin-bottom: 2rem;
     }
 
-    .work-tags {
-      font-size: 0.8rem;
-      color: rgba(209, 213, 219, 0.85);
-    }
-
-    .work-footer {
-      margin-top: 0.7rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.86rem;
-    }
-
-    .work-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      padding: 0.35rem 0.8rem;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(191, 219, 254, 0.6);
-      color: #e5e7eb;
-    }
-
-    .work-link span.arrow {
-      font-size: 1rem;
-    }
-
-    /* ABOUT & CONTACT */
-
-    .about-text p {
-      font-size: 0.96rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-top: 0;
-    }
-
-    .about-text p + p {
-      margin-top: 0.8rem;
-    }
-
-    .contact-list {
-      list-style: none;
-      padding: 0;
-      margin: 0.6rem 0 0;
+    /* Process icons */
+    .process-grid {
       display: grid;
-      gap: 0.4rem;
-      font-size: 0.95rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      max-width: 600px;
+      margin: 2rem auto 3rem;
     }
 
-    .contact-list a {
-      color: #4338ca;
-    }
-
-    .contact-list a:hover {
-      text-decoration: underline;
-    }
-
-    /* Footer */
-
-    .footer {
-      padding: 2rem 1.25rem 2.5rem;
+    .process-step {
       text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
     }
 
-    @media (min-width: 900px) {
-      .footer {
-        padding-inline: 0;
-      }
+    .process-icon {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 14px;
+      padding: 12px;
+      border-radius: 14px;
+      background: #ffffff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .process-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: #2b2345;
+      stroke-width: 1.8;
+      fill: none;
+    }
+
+    .figma-frame {
+      margin-top: 3rem;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(53,33,83,0.12);
+    }
+
+    iframe {
+      width: 100%;
+      height: 520px;
+      border: none;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 3rem;
+      font-size: 0.95rem;
+      color: #6e5ea1;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
+
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="#top" class="logo-pill">
-        <span class="logo-orb"></span>
-        <span class="logo-text">Julia Alix</span>
-      </a>
-      <nav class="nav">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
+
+  <div class="header-min">Julia Alix</div>
+
+  <div class="project-container">
+
+    <h1>BusyBee – Productivity App</h1>
+    <div class="tags">UI DESIGN • MOBILE APP • PROTOTYPE</div>
+
+    <img src="Busybee_Cover.png" class="project-cover" alt="BusyBee Project Cover" />
+
+    <h2>Overview</h2>
+    <p>
+      BusyBee is a bright, bee-themed productivity app that helps users stay organized,
+      manage tasks efficiently, and maintain focus through a clean, friendly UI.
+    </p>
+
+    <h2>My Role</h2>
+    <p>UI design, visual direction, layout, and interaction design.</p>
+
+    <h2>Goals</h2>
+    <ul>
+      <li>Create a simple and friendly everyday productivity experience</li>
+      <li>Make organization feel light instead of overwhelming</li>
+      <li>Use a memorable visual identity centered around the “bee” theme</li>
+    </ul>
+
+    <h2>Key Decisions</h2>
+    <ul>
+      <li>Bold yellow palette with strong contrast for clarity</li>
+      <li>Rounded shapes and soft shadows for playfulness</li>
+      <li>Clear hierarchy so tasks and priorities are easy to scan</li>
+    </ul>
+
+    <h2>Process</h2>
+
+    <div class="process-grid">
+
+      <div class="process-step">
+        <div class="process-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 3 2 5.5 4 6.6V17a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1.4c2-1.1 4-3.6 4-6.6a7 7 0 0 0-7-7z"/></svg>
+        </div>
+        <p>Understanding user needs</p>
+      </div>
+
+      <div class="process-step">
+        <div class="process-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 3h6v6H4V3Zm10 0h6v6h-6V3ZM4 13h6v6H4v-6Zm10 0h6v6h-6v-6Z"/></svg>
+        </div>
+        <p>Mapping flows & structure</p>
+      </div>
+
+      <div class="process-step">
+        <div class="process-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 17l6-6m0 0 6 6m-6-6V3"/></svg>
+        </div>
+        <p>Wireframing core screens</p>
+      </div>
+
+      <div class="process-step">
+        <div class="process-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22a2 2 0 0 1-2-2V4a2 2 0 1 1 4 0v16a2 2 0 0 1-2 2Z"/></svg>
+        </div>
+        <p>Final UI & visual refinements</p>
+      </div>
+
     </div>
-  </header>
 
-  <main class="page" id="top">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div>
-          <div class="hero-tag">Senior Designer</div>
-          <h1 class="hero-title">
-            Crafting UI Design,
-            <span class="break">Branding, and Visuals to</span>
-            <span class="break">create fun, friendly and</span>
-            <span class="break">intentional experiences.</span>
-          </h1>
-          <p class="hero-subtitle">
-            Great design goes beyond aesthetics—it’s something people connect with.
-          </p>
+    <h2>Prototype</h2>
+    <div class="figma-frame">
+      <iframe src="https://www.figma.com/proto/1Ezlj00vhgMC2QKL0pD3Mc/BusyBee-2023?node-id=5-2412&p=f&t=ecyi1yYCGOmV1qdK-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A3070"></iframe>
+    </div>
 
-          <div class="hero-cta-row">
-            <a href="#work" class="btn-pill btn-primary">See my work</a>
-            <a href="#contact" class="btn-pill btn-ghost">Contact me</a>
-          </div>
+    <a href="index.html#work" class="back-link">← Back to projects</a>
 
-          <p class="hero-caption">
-            Currently focusing on UI, visual design, and playful digital experiences.
-          </p>
-        </div>
+  </div>
 
-        <div class="hero-visual">
-          <div class="hero-orb"></div>
-          <div class="hero-avatar-frame">
-            <img src="Avatar_Juju.png" alt="Avatar illustration of Julia Alix sitting on a crescent moon, waving while using a laptop." />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WORK -->
-    <section class="section" id="work">
-      <div class="section-header">
-        <div class="section-kicker">Work</div>
-        <h2 class="section-title">Check out my works!</h2>
-        <p class="section-subtitle">
-          A few of the projects I’ve been working on recently.
-        </p>
-      </div>
-
-      <div class="work-grid">
-        <!-- BusyBee -->
-        <article class="work-card">
-          <div class="work-thumb">
-            <img src="Busybee_Cover.png" alt="BusyBee productivity app cover" />
-          </div>
-          <h3 class="work-title">BusyBee – Productivity App</h3>
-          <p class="work-desc">
-            A bright, bee-themed productivity app that helps users organize tasks, manage time efficiently,
-            and stay focused through a clean, friendly UI.
-          </p>
-          <p class="work-tags">UI Design • Mobile App • Prototype</p>
-          <div class="work-footer">
-            <a href="busybee.html" class="work-link">
-              <span>View case study</span>
-              <span class="arrow">→</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- DigiBot -->
-        <article class="work-card">
-          <div class="work-thumb">
-            <img src="Digibot_Cover.png" alt="Digibot application cover – two people collaborating at a desk" />
-          </div>
-          <h3 class="work-title">DigiBot – Application</h3>
-          <p class="work-desc">
-            A vibrant concept focused on digital creativity and collaboration, with a bold color palette
-            and playful illustration-led UI.
-          </p>
-          <p class="work-tags">UI Design • Branding • Web App</p>
-          <div class="work-footer">
-            <a href="digibot.html" class="work-link">
-              <span>View case study</span>
-              <span class="arrow">→</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- UnaMarket -->
-        <article class="work-card">
-          <div class="work-thumb">
-            <img src="Unamarket_cover.png" alt="UnaMarket seller's landing page cover – logo and illustration of a seller at a laptop" />
-          </div>
-          <h3 class="work-title">UnaMarket – Seller’s Landing Page</h3>
-          <p class="work-desc">
-            A clean, friendly marketplace landing page designed for sellers, focusing on clarity, trust,
-            and simple onboarding.
-          </p>
-          <p class="work-tags">UI Design • Web • Landing Page</p>
-          <div class="work-footer">
-            <a href="unamarket.html" class="work-link">
-              <span>View case study</span>
-              <span class="arrow">→</span>
-            </a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="section-header">
-        <div class="section-kicker">About</div>
-        <h2 class="section-title">Hey there! I’m Julia.</h2>
-      </div>
-      <div class="about-text">
-        <p>
-          I’m currently a Senior Designer with eight years of experience, with a strong track record working
-          with international clients across print, digital design, and web. Creativity has always been my comfort
-          zone—it’s what pushed me to study Arts and Design and eventually turn it into a career.
-        </p>
-        <p>
-          I love exploring different corners of the design industry, learning and adapting as everything evolves.
-          Right now I’m into frontend development. What makes me happiest is creating designs that feel clear and
-          easy for people to use—work that feels natural, because they instantly get what they’re looking at or
-          what they need to do.
-        </p>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-      <div class="section-header">
-        <div class="section-kicker">Contact</div>
-        <h2 class="section-title">Let’s work together!</h2>
-        <p class="section-subtitle">
-          Open to freelance projects, collaborations, and full-time design opportunities.
-        </p>
-      </div>
-      <ul class="contact-list">
-        <li>Email: <a href="mailto:youremail@email.com">youremail@email.com</a></li>
-        <li><a href="#" target="_blank" rel="noreferrer">Behance</a></li>
-        <li><a href="#" target="_blank" rel="noreferrer">Dribbble</a></li>
-        <li><a href="#" target="_blank" rel="noreferrer">Instagram</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer class="footer">
-    © <span id="year"></span> Julia Jasmin Alix. All rights reserved.
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
