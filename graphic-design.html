@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Graphic Design Portfolio | Julia Alix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Keep your existing global styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ===== GRAPHIC DESIGN PAGE – LOCAL STYLES ===== */
+
+    body {
+      background: radial-gradient(circle at top left, #1e1b4b 0, #020617 40%, #020617 100%);
+      color: #f9fafb;
+    }
+
+    .gd-page {
+      min-height: 100vh;
+    }
+
+    .gd-container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 4rem;
+    }
+
+    /* Header / Nav */
+    .gd-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      margin-bottom: 2rem;
+      gap: 1rem;
+    }
+
+    .gd-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .gd-logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: conic-gradient(from 200deg, #f97316, #facc15, #22c55e, #38bdf8, #f97316);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.8);
+    }
+
+    .gd-logo-mark::after {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border-radius: inherit;
+      background: rgba(15, 23, 42, 0.96);
+    }
+
+    .gd-logo-text-main {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+    }
+
+    .gd-logo-tagline {
+      font-size: 0.75rem;
+      opacity: 0.7;
+    }
+
+    .gd-nav {
+      display: flex;
+      gap: 0.25rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .gd-nav a {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      color: #e5e7eb;
+      text-decoration: none;
+      backdrop-filter: blur(14px);
+      background: radial-gradient(circle at top left,
+        rgba(56, 189, 248, 0.16),
+        rgba(15, 23, 42, 0.96));
+      transition: all 0.18s ease;
+    }
+
+    .gd-nav a:hover {
+      border-color: rgba(244, 244, 245, 0.7);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 16px rgba(15, 23, 42, 0.6);
+    }
+
+    .gd-nav a.gd-nav-active {
+      background: linear-gradient(135deg, #f97316, #e11d48);
+      color: #0b1120;
+      border-color: transparent;
+      font-weight: 600;
+    }
+
+    /* Hero */
+    .gd-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+      margin-top: 1rem;
+      margin-bottom: 3.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .gd-hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .gd-hero-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #a5b4fc;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .gd-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #f97316;
+      box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.15);
+    }
+
+    .gd-hero-title {
+      font-size: clamp(2.4rem, 4vw + 1rem, 3.4rem);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+
+    .gd-hero-title span {
+      background: linear-gradient(120deg, #f97316, #fb7185, #a855f7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .gd-hero-subtitle {
+      font-size: 0.95rem;
+      max-width: 34rem;
+      color: #e5e7eb;
+      opacity: 0.85;
+      margin-bottom: 1.6rem;
+    }
+
+    .gd-hero-subtitle strong {
+      color: #f97316;
+      font-weight: 600;
+    }
+
+    .gd-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .gd-btn-primary,
+    .gd-btn-ghost {
+      border-radius: 999px;
+      font-size: 0.9rem;
+      padding: 0.65rem 1.4rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      border: 1px solid transparent;
+      text-decoration: none;
+      transition: all 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .gd-btn-primary {
+      background: linear-gradient(135deg, #f97316, #e11d48);
+      color: #0f172a;
+      font-weight: 600;
+      box-shadow:
+        0 10px 25px rgba(15, 23, 42, 0.9),
+        0 0 0 1px rgba(248, 250, 252, 0.04);
+    }
+
+    .gd-btn-primary:hover {
+      transform: translateY(-1px) translateX(1px);
+      box-shadow:
+        0 14px 30px rgba(15, 23, 42, 0.98),
+        0 0 0 1px rgba(248, 250, 252, 0.06);
+    }
+
+    .gd-btn-ghost {
+      background: rgba(15, 23, 42, 0.85);
+      color: #e5e7eb;
+      border-color: rgba(148, 163, 184, 0.4);
+      backdrop-filter: blur(18px);
+    }
+
+    .gd-btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.95);
+      border-color: rgba(248, 250, 252, 0.72);
+      transform: translateY(-1px);
+    }
+
+    .gd-hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    .gd-label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.68rem;
+      color: #64748b;
+      margin-bottom: 0.15rem;
+    }
+
+    .gd-meta-value {
+      color: #e5e7eb;
+    }
+
+    /* Hero Visual (Avatar + card stack) */
+    .gd-hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .gd-blob {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 20% 10%, #f97316, transparent 55%),
+                  radial-gradient(circle at 80% 90%, #22c55e, transparent 55%);
+      filter: blur(12px);
+      opacity: 0.85;
+      transform: translateY(8px);
+    }
+
+    .gd-avatar-card {
+      position: relative;
+      width: min(320px, 85vw);
+      padding: 1.1rem;
+      border-radius: 1.75rem;
+      background:
+        radial-gradient(circle at top, rgba(248, 250, 252, 0.16), transparent 60%),
+        rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      box-shadow:
+        0 18px 50px rgba(15, 23, 42, 0.9),
+        0 0 0 1px rgba(15, 23, 42, 0.95);
+      overflow: hidden;
+      transform: rotate(-2.5deg) translateY(4px);
+    }
+
+    @media (max-width: 900px) {
+      .gd-avatar-card {
+        transform: rotate(-1.5deg);
+      }
+    }
+
+    .gd-avatar-inner {
+      border-radius: 1.3rem;
+      padding: 0.9rem;
+      background: radial-gradient(circle at top left,
+        rgba(56, 189, 248, 0.16),
+        rgba(15, 23, 42, 0.8));
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .gd-avatar-image-wrapper {
+      width: 160px;
+      height: 160px;
+      border-radius: 1.5rem;
+      background: radial-gradient(circle at 20% 10%, #f97316, #fb7185);
+      padding: 4px;
+      box-shadow:
+        0 12px 28px rgba(15, 23, 42, 0.9),
+        0 0 0 1px rgba(15, 23, 42, 0.9);
+      overflow: hidden;
+    }
+
+    .gd-avatar-image-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 1.2rem;
+      background: #020617 url("img/avatar-julia.png") center/cover no-repeat;
+      /* ↑ Replace with your avatar path */
+    }
+
+    .gd-avatar-caption {
+      text-align: center;
+    }
+
+    .gd-avatar-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .gd-avatar-role {
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    .gd-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.35rem;
+      margin-top: 0.45rem;
+    }
+
+    .gd-chip {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
+      backdrop-filter: blur(12px);
+    }
+
+    .gd-floating-tag {
+      position: absolute;
+      top: 8%;
+      right: -8%;
+      transform: rotate(12deg);
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      background: #facc15;
+      color: #0f172a;
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.9);
+    }
+
+    .gd-floating-badge {
+      position: absolute;
+      bottom: -6%;
+      left: 6%;
+      padding: 0.5rem 0.85rem;
+      border-radius: 1rem;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      font-size: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #e5e7eb;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 1);
+    }
+
+    .gd-dot-soft {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.2);
+    }
+
+    /* Section shell */
+    .gd-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .gd-section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    @media (max-width: 720px) {
+      .gd-section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .gd-section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.75rem;
+      color: #a5b4fc;
+      margin-bottom: 0.25rem;
+    }
+
+    .gd-section-title {
+      font-size: 1.35rem;
+    }
+
+    .gd-section-desc {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      max-width: 24rem;
+    }
+
+    .gd-link-inline {
+      font-size: 0.8rem;
+      color: #f97316;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .gd-link-inline:hover {
+      text-decoration: underline;
+    }
+
+    /* Featured Case Study Card */
+    .gd-featured-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      align-items: stretch;
+      border-radius: 1.5rem;
+      background: #020617;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      box-shadow:
+        0 16px 40px rgba(15, 23, 42, 0.9),
+        0 0 0 1px rgba(2, 6, 23, 0.9);
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (max-width: 900px) {
+      .gd-featured-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .gd-tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      color: #e5e7eb;
+      margin-bottom: 0.7rem;
+    }
+
+    .gd-tag-color {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #fb7185, #a855f7);
+    }
+
+    .gd-featured-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .gd-featured-sub {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      margin-bottom: 0.9rem;
+    }
+
+    .gd-featured-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      font-size: 0.75rem;
+      margin-bottom: 1rem;
+      color: #9ca3af;
+    }
+
+    .gd-meta-label {
+      color: #64748b;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 0.15rem;
+      display: block;
+    }
+
+    .gd-btn-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.2rem;
+    }
+
+    .gd-btn-chip {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: #e5e7eb;
+    }
+
+    .gd-featured-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .gd-featured-image-frame {
+      border-radius: 1.3rem;
+      background: radial-gradient(circle at top left,
+        rgba(244, 114, 182, 0.24),
+        rgba(15, 23, 42, 0.98));
+      padding: 0.45rem;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+    }
+
+    .gd-featured-image-inner {
+      border-radius: 1rem;
+      background: #020617 url("img/gd-featured-1.jpg") center/cover no-repeat;
+      /* ↑ Replace with export from Canva */
+      min-height: 220px;
+    }
+
+    .gd-sticker {
+      position: absolute;
+      bottom: 0.6rem;
+      right: 0.7rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px dashed rgba(248, 250, 252, 0.7);
+      font-size: 0.7rem;
+      color: #e5e7eb;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .gd-emoji-chip {
+      font-size: 0.9rem;
+    }
+
+    /* Work Grid */
+    .gd-work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.3rem;
+    }
+
+    @media (max-width: 900px) {
+      .gd-work-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .gd-work-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .gd-work-card {
+      position: relative;
+      border-radius: 1.2rem;
+      padding: 0.9rem;
+      background: #020617;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      box-shadow:
+        0 12px 26px rgba(15, 23, 42, 0.95),
+        0 0 0 1px rgba(15, 23, 42, 0.95);
+      cursor: pointer;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+      overflow: hidden;
+    }
+
+    .gd-work-card:hover {
+      transform: translateY(-6px) rotate(-0.7deg);
+      box-shadow:
+        0 18px 34px rgba(15, 23, 42, 0.98),
+        0 0 0 1px rgba(248, 250, 252, 0.12);
+      border-color: rgba(244, 244, 245, 0.9);
+    }
+
+    .gd-work-image {
+      border-radius: 0.9rem;
+      background-color: #020617;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      min-height: 140px;
+      margin-bottom: 0.7rem;
+    }
+
+    /* Example image hooks – replace with real files */
+    .gd-work-image.brand-kit {
+      background-image: url("img/gd-brand-kit.jpg");
+    }
+
+    .gd-work-image.social-pack {
+      background-image: url("img/gd-social-pack.jpg");
+    }
+
+    .gd-work-image.poster {
+      background-image: url("img/gd-poster.jpg");
+    }
+
+    .gd-work-image.menu {
+      background-image: url("img/gd-menu.jpg");
+    }
+
+    .gd-work-image.logo-row {
+      background-image: url("img/gd-logos.jpg");
+    }
+
+    .gd-work-image.illustration {
+      background-image: url("img/gd-illustration.jpg");
+    }
+
+    .gd-work-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .gd-work-pill {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(30, 64, 175, 0.8);
+      color: #e5e7eb;
+    }
+
+    .gd-work-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .gd-work-sub {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      margin-bottom: 0.55rem;
+    }
+
+    .gd-work-meta {
+      font-size: 0.72rem;
+      color: #6b7280;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .gd-view-link {
+      font-size: 0.72rem;
+      color: #f97316;
+      text-decoration: none;
+    }
+
+    .gd-view-link:hover {
+      text-decoration: underline;
+    }
+
+    .gd-corner-tag {
+      position: absolute;
+      top: 0.6rem;
+      right: 0.7rem;
+      border-radius: 999px;
+      padding: 0.18rem 0.55rem;
+      font-size: 0.68rem;
+      background: #f97316;
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    /* Process Section */
+    .gd-process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .gd-process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .gd-process-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .gd-process-card {
+      border-radius: 1.2rem;
+      padding: 1rem;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .gd-process-icon-wrap {
+      width: 42px;
+      height: 42px;
+      border-radius: 1.4rem;
+      background: radial-gradient(circle at 20% 0%, #f97316, #ec4899);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow:
+        0 10px 22px rgba(15, 23, 42, 0.9),
+        0 0 0 2px rgba(15, 23, 42, 0.95);
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .gd-process-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .gd-process-text {
+      font-size: 0.78rem;
+      color: #9ca3af;
+    }
+
+    /* Toolbox */
+    .gd-tool-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .gd-tool-pill {
+      font-size: 0.75rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    /* Contact / CTA */
+    .gd-cta {
+      border-radius: 1.5rem;
+      padding: 1.6rem 1.4rem;
+      background: radial-gradient(circle at 0% 0%, rgba(251, 113, 133, 0.22), transparent 55%),
+                  radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.16), transparent 55%),
+                  rgba(15, 23, 42, 0.98);
+      border: 1px solid rgba(148, 163, 184, 0.75);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.3rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .gd-cta-title {
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .gd-cta-text {
+      font-size: 0.85rem;
+      color: #e5e7eb;
+      max-width: 22rem;
+    }
+
+    .gd-cta-badge {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      color: #e5e7eb;
+      display: inline-flex;
+      gap: 0.35rem;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .gd-cta-note {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-top: 0.3rem;
+    }
+
+    /* Small utilities */
+    .gd-muted {
+      color: #9ca3af;
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body class="gd-page">
+  <div class="gd-container">
+    <!-- HEADER -->
+    <header class="gd-header">
+      <div class="gd-logo">
+        <div class="gd-logo-mark"></div>
+        <div>
+          <div class="gd-logo-text-main">Julia Alix</div>
+          <div class="gd-logo-tagline">Graphic & Product Designer</div>
+        </div>
+      </div>
+
+      <nav class="gd-nav">
+        <!-- Adjust hrefs to match your actual file names -->
+        <a href="index.html">Home</a>
+        <a href="index.html#work">UX & Product</a>
+        <a href="graphic-design.html" class="gd-nav-active">Graphic Design</a>
+        <a href="mailto:hello@yourmail.com">Say hello ✉️</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="gd-hero">
+      <div class="gd-hero-copy">
+        <div class="gd-hero-kicker">
+          <span class="gd-dot"></span>
+          Graphic Design Playground
+        </div>
+
+        <h1 class="gd-hero-title">
+          Fun, bold visuals that still feel
+          <span>clear & intentional.</span>
+        </h1>
+
+        <p class="gd-hero-subtitle">
+          I design <strong>brand kits, social posts, posters, and illustrations</strong>
+          that look playful on the outside—but stay super clear on what people
+          need to see, click, or remember.
+        </p>
+
+        <div class="gd-hero-actions">
+          <a href="#work" class="gd-btn-primary">
+            View selected works
+            <span>↓</span>
+          </a>
+          <!-- Link this to your Canva folder / Drive / Behance if you want -->
+          <a href="#" class="gd-btn-ghost">
+            View full gallery
+          </a>
+        </div>
+
+        <div class="gd-hero-meta">
+          <div>
+            <div class="gd-label">Specialties</div>
+            <div class="gd-meta-value">Branding, Social Media, Layout, Illustration</div>
+          </div>
+          <div>
+            <div class="gd-label">Platforms</div>
+            <div class="gd-meta-value">Canva, Figma, Adobe Suite</div>
+          </div>
+          <div>
+            <div class="gd-label">Style</div>
+            <div class="gd-meta-value">Playful, colorful, still clean</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gd-hero-visual">
+        <div class="gd-blob"></div>
+
+        <div class="gd-avatar-card">
+          <div class="gd-avatar-inner">
+            <div class="gd-avatar-image-wrapper">
+              <div class="gd-avatar-image-inner"></div>
+              <!-- Replace avatar image path in CSS -->
+            </div>
+
+            <div class="gd-avatar-caption">
+              <div class="gd-avatar-name">Julia Alix</div>
+              <div class="gd-avatar-role">Graphic & Product Designer</div>
+
+              <div class="gd-chip-row">
+                <span class="gd-chip">Brand Kits</span>
+                <span class="gd-chip">Social Media Sets</span>
+                <span class="gd-chip">Posters</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gd-floating-tag">
+            ✦ Graphic Design
+          </div>
+
+          <div class="gd-floating-badge">
+            <span class="gd-dot-soft"></span>
+            <span>Made with Canva & friends</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED CASE STUDY -->
+    <section class="gd-section" id="work">
+      <div class="gd-section-header">
+        <div>
+          <div class="gd-section-kicker">Featured project</div>
+          <h2 class="gd-section-title">Brand kit & social launch campaign</h2>
+        </div>
+        <p class="gd-section-desc">
+          A full mini-brand system and launch graphics for a small business:
+          logo lockups, palette, social tiles, and story templates—all built to
+          be editable by the client in Canva.
+        </p>
+      </div>
+
+      <article class="gd-featured-card">
+        <div>
+          <span class="gd-tag-pill">
+            <span class="gd-tag-color"></span>
+            Branding · Social Pack
+          </span>
+
+          <h3 class="gd-featured-title">“BusyBee Bites” brand starter kit</h3>
+          <p class="gd-featured-sub">
+            Bright, friendly visuals for a snacks brand—focused on being scroll-stopping
+            in feeds but still super easy to reuse and update by a non-designer.
+          </p>
+
+          <div class="gd-featured-meta-row">
+            <div>
+              <span class="gd-meta-label">Role</span>
+              Visual identity, layout, social templates
+            </div>
+            <div>
+              <span class="gd-meta-label">Deliverables</span>
+              Logo variants, IG & FB posts, stories, cover images
+            </div>
+          </div>
+
+          <div class="gd-featured-meta-row">
+            <div>
+              <span class="gd-meta-label">Tools</span>
+              <div class="gd-btn-chip-row">
+                <span class="gd-btn-chip">Canva</span>
+                <span class="gd-btn-chip">Figma</span>
+                <span class="gd-btn-chip">Procreate (sketches)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gd-featured-actions">
+            <!-- Link this to the specific Canva design if you want -->
+            <a href="#" class="gd-btn-primary">
+              View project preview
+            </a>
+            <a href="#" class="gd-btn-ghost">
+              Open client-ready file
+            </a>
+          </div>
+        </div>
+
+        <div class="gd-featured-image-frame">
+          <div class="gd-featured-image-inner"></div>
+          <!-- Replace background image in CSS with export from your Canva case study -->
+
+          <div class="gd-sticker">
+            <span class="gd-emoji-chip">🧡</span>
+            <span>“Make it cute but clear.”</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- WORK GRID -->
+    <section class="gd-section">
+      <div class="gd-section-header">
+        <div>
+          <div class="gd-section-kicker">Selected graphic design</div>
+          <h2 class="gd-section-title">A few favorites from my Canva universe</h2>
+        </div>
+        <div>
+          <p class="gd-section-desc">
+            A mix of brand kits, social media packs, posters, and other tiny experiments
+            that kept my layers messy but my layouts intentional.
+          </p>
+          <!-- Link to your Canva folder -->
+          <a href="#" class="gd-link-inline">
+            Open full Canva collection <span>↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="gd-work-grid">
+        <!-- Card 1 -->
+        <article class="gd-work-card">
+          <div class="gd-work-image brand-kit"></div>
+          <div class="gd-work-pill-row">
+            <span class="gd-work-pill">Brand kit</span>
+            <span class="gd-work-pill">Logo & palette</span>
+          </div>
+          <h3 class="gd-work-title">“Sunny Café” mini identity</h3>
+          <p class="gd-work-sub">
+            Warm, cozy vibes for a neighborhood café: logo, color system,
+            typography, and a starter set of social tiles.
+          </p>
+          <div class="gd-work-meta">
+            <span>Canva · 10-page kit</span>
+            <a href="#" class="gd-view-link">Preview ↗</a>
+          </div>
+          <div class="gd-corner-tag">New</div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="gd-work-card">
+          <div class="gd-work-image social-pack"></div>
+          <div class="gd-work-pill-row">
+            <span class="gd-work-pill">Social media</span>
+            <span class="gd-work-pill">Carousel</span>
+          </div>
+          <h3 class="gd-work-title">Product launch carousel set</h3>
+          <p class="gd-work-sub">
+            A swipeable IG carousel balancing bold typography, product shots,
+            and super simple messaging hierarchy.
+          </p>
+          <div class="gd-work-meta">
+            <span>Instagram · 7 slides</span>
+            <a href="#" class="gd-view-link">Preview ↗</a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="gd-work-card">
+          <div class="gd-work-image poster"></div>
+          <div class="gd-work-pill-row">
+            <span class="gd-work-pill">Poster</span>
+            <span class="gd-work-pill">Event</span>
+          </div>
+          <h3 class="gd-work-title">Music night poster & story set</h3>
+          <p class="gd-work-sub">
+            A playful, layered poster with matching stories for a live event:
+            collage-style but still easy to read at a glance.
+          </p>
+          <div class="gd-work-meta">
+            <span>Print + IG story</span>
+            <a href="#" class="gd-view-link">Preview ↗</a>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="gd-work-card">
+          <div class="gd-work-image.menu"></div>
+          <div class="gd-work-pill-row">
+            <span class="gd-work-pill">Menu design</span>
+            <span class="gd-work-pill">Layout</span>
+          </div>
+          <h3 class="gd-work-title">Minimal café menu layout</h3>
+          <p class="gd-work-sub">
+            A clean food & drink menu where hierarchy and spacing do most of the
+            design work—made editable for the client.
+          </p>
+          <div class="gd-work-meta">
+            <span>A4 & digital menu</span>
+            <a href="#" class="gd-view-link">Preview ↗</a>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="gd-work-card">
+          <div class="gd-work-image logo-row"></div>
+          <div class="gd-work-pill-row">
+            <span class="gd-work-pill">Logos</span>
+            <span class="gd-work-pill">Explorations</span>
+          </div>
+          <h3 class="gd-work-title">Logo & mark explorations</h3>
+          <p class="gd-work-sub">
+            A small collection of logomarks, wordmarks, and icon experiments
+            built for different small business concepts.
+          </p>
+          <div class="gd-work-meta">
+            <span>Logo sheet</span>
+            <a href="#" class="gd-view-link">Preview ↗</a>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="gd-work-card">
+          <div class="gd-work-image illustration"></div>
+          <div class="gd-work-pill-row">
+            <span class="gd-work-pill">Illustration</span>
+            <span class="gd-work-pill">Character</span>
+          </div>
+          <h3 class="gd-work-title">Soft character illustration set</h3>
+          <p class="gd-work-sub">
+            Simple, soft character illustrations used across stories, covers,
+            and about sections for a personal brand.
+          </p>
+          <div class="gd-work-meta">
+            <span>Digital illustration</span>
+            <a href="#" class="gd-view-link">Preview ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="gd-section">
+      <div class="gd-section-header">
+        <div>
+          <div class="gd-section-kicker">How I design</div>
+          <h2 class="gd-section-title">Playful, but not chaotic</h2>
+        </div>
+        <p class="gd-section-desc">
+          I keep colors and shapes fun, but the structure calm—so even the most
+          “extra” layout still has a clear story and hierarchy.
+        </p>
+      </div>
+
+      <div class="gd-process-grid">
+        <article class="gd-process-card">
+          <div class="gd-process-icon-wrap">✨</div>
+          <h3 class="gd-process-title">01 · Brief & vibe check</h3>
+          <p class="gd-process-text">
+            We talk about your brand, audience, and “vibe words” (fun, cozy,
+            minimal, loud?) so the visuals feel like you—not a random template.
+          </p>
+        </article>
+
+        <article class="gd-process-card">
+          <div class="gd-process-icon-wrap">🎨</div>
+          <h3 class="gd-process-title">02 · Layout & color play</h3>
+          <p class="gd-process-text">
+            I experiment with color, type, and composition while making sure
+            the main message is readable in three seconds or less.
+          </p>
+        </article>
+
+        <article class="gd-process-card">
+          <div class="gd-process-icon-wrap">✅</div>
+          <h3 class="gd-process-title">03 · Client-ready & editable</h3>
+          <p class="gd-process-text">
+            You get clean, organized files in Canva (and/or other tools) so
+            you can duplicate, tweak, and reuse everything without stress.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- TOOLBOX + CTA -->
+    <section class="gd-section">
+      <div class="gd-cta">
+        <div>
+          <div class="gd-cta-badge">
+            <span>🧰</span>
+            <span>Design toolbox</span>
+          </div>
+          <h2 class="gd-cta-title">Ready for your next launch or rebrand?</h2>
+          <p class="gd-cta-text">
+            Whether you need a quick social pack, a full mini brand kit, or
+            something a bit weird and experimental—I’m happy to help you make
+            it real (and still very readable).
+          </p>
+        </div>
+
+        <div>
+          <div class="gd-tool-row" style="margin-bottom: 0.75rem;">
+            <span class="gd-tool-pill">Canva</span>
+            <span class="gd-tool-pill">Figma</span>
+            <span class="gd-tool-pill">Adobe Photoshop</span>
+            <span class="gd-tool-pill">Adobe Illustrator</span>
+            <span class="gd-tool-pill">Procreate</span>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+            <a href="mailto:hello@yourmail.com?subject=Graphic%20Design%20Project"
+               class="gd-btn-primary">
+              Let’s work together
+            </a>
+            <a href="#work" class="gd-btn-ghost">
+              Scroll back to projects ↑
+            </a>
+          </div>
+          <div class="gd-cta-note">
+            Prefer to send a brief first? Share your ideas, timeline, and any
+            reference links—you can be as messy as you want, I’ll organize it. ✍️
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer style="margin-top: 2.4rem; text-align: center;">
+      <p class="gd-muted">
+        © <span id="year"></span> Julia Alix · Graphic Design Portfolio
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    // Simple year updater
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
