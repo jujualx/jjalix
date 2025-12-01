@@ -205,11 +205,11 @@ a {
 }
 
 .project img {
-  margin-bottom: 0.75rem;
-  border-radius: 12px;
-  object-fit: cover;
+  display: block;
   width: 100%;
   height: auto;
+  object-fit: cover;
+  border-radius: 16px;
 }
 
 .tags {
