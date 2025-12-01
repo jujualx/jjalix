@@ -178,6 +178,8 @@ a {
   box-shadow: 0 10px 30px rgba(53, 33, 83, 0.08);
   display: flex;
   flex-direction: column;
+  justify-content: flex-start; /* ensures content starts at the top */
+  align-items: flex-start;     /* aligns text to the left */
   height: 100%;
   position: relative;
   overflow: hidden;
@@ -186,6 +188,7 @@ a {
   transform-style: preserve-3d;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
 
 .project.in-view {
   animation: fadeUp 0.6s ease-out forwards;
