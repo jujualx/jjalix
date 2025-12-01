@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DigiBot - Creative Services</title>
+  <title>DigiBot – Creative Services</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,11 +11,11 @@
     <div class="container header-inner">
       <div class="logo">
         <div class="logo-mark"></div>
-        <div class="logo-text">Julia Alix</div>
+        <div class="logo-text">JULIA ALIX</div>
       </div>
       <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="#">Work</a>
+        <a href="index.html">Work</a>
+        <a href="#">About</a>
         <a href="#">Contact</a>
       </nav>
     </div>
@@ -23,69 +23,95 @@
 
   <main class="container">
     <section class="hero">
-      <div class="hero-content">
-        <span class="hero-label">DIGIBOT APP - CREATIVE SERVICES</span>
-        <div class="hero-image">
-          <img src="images/digibot-header.png" alt="DigiBot Hero" />
+      <div class="hero-flex">
+        <div class="hero-content">
+          <span class="hero-label">DIGIBOT APP – CREATIVE SERVICES</span>
+          <h1>DigiBot</h1>
+          <p class="hero-sub">A creative app concept centered around visual collaboration and digital productivity.</p>
+        </div>
+        <div class="hero-avatar">
+          <img src="images/digibot-hero.png" alt="DigiBot Hero" />
         </div>
       </div>
     </section>
 
-    <section class="intro">
+    <section>
       <h2>Introduction</h2>
       <ol>
-        <li>About the App</li>
-        <li>Package I Offer on This</li>
-        <li>Package Inclusion</li>
+        <li>ABOUT THE APP</li>
+        <li>PACKAGE I OFFER ON THIS</li>
+        <li>PACKAGE INCLUSION</li>
       </ol>
     </section>
 
-    <section class="process">
-      <h3>Process</h3>
+    <section>
+      <h2>Process</h2>
       <div class="process-grid">
         <div class="process-step">
-          <div class="process-icon">🔍</div>
+          <div class="process-icon">
+            <svg><use href="#icon-search"></use></svg>
+          </div>
           <h4>Research</h4>
+          <p>User interviews, competitor analysis, feature prioritization.</p>
         </div>
         <div class="process-step">
-          <div class="process-icon">⚙️</div>
+          <div class="process-icon">
+            <svg><use href="#icon-cog"></use></svg>
+          </div>
           <h4>Implementation</h4>
+          <p>UX flows, low-fidelity wireframes, prototyping.</p>
         </div>
         <div class="process-step">
-          <div class="process-icon">🎨</div>
+          <div class="process-icon">
+            <svg><use href="#icon-pencil"></use></svg>
+          </div>
           <h4>Design</h4>
+          <p>UI visuals, typography, iconography, illustration-led design.</p>
         </div>
       </div>
     </section>
 
-    <section class="design-samples">
-      <h3>Design Samples</h3>
-      <div class="sample-grid">
-        <button class="sample-btn" onclick="showSample('branding')">Branding</button>
-        <button class="sample-btn" onclick="showSample('wireframe')">Wireframe</button>
-        <button class="sample-btn" onclick="showSample('site')">Site</button>
+    <section>
+      <h2>Design Samples</h2>
+      <div class="grid">
+        <div class="project">
+          <img src="images/digibot-branding.png" alt="Branding Preview" />
+          <h3>Branding</h3>
+        </div>
+        <div class="project">
+          <img src="images/digibot-wireframe.png" alt="Wireframe Preview" />
+          <h3>Wireframe</h3>
+        </div>
+        <div class="project">
+          <img src="images/digibot-site.png" alt="Site Preview" />
+          <h3>Site</h3>
+        </div>
       </div>
-      <div class="sample-preview" id="branding">
-        <img src="images/branding-preview.png" alt="Branding Preview" />
-      </div>
-      <div class="sample-preview" id="wireframe" style="display:none">
-        <img src="images/wireframe-preview.png" alt="Wireframe Preview" />
-      </div>
-      <div class="sample-preview" id="site" style="display:none">
-        <img src="images/site-preview.png" alt="Site Preview" />
+    </section>
+
+    <section>
+      <h2>Prototype</h2>
+      <div class="project">
+        <img src="images/digibot-prototype.png" alt="Prototype preview" />
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>&copy; 2025 Julia Alix. All rights reserved.</p>
-  </footer>
+  <footer class="footer">&copy; 2025 Julia Alix. All rights reserved.</footer>
 
-  <script>
-    function showSample(id) {
-      document.querySelectorAll('.sample-preview').forEach(div => div.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
-    }
-  </script>
+  <svg style="display:none">
+    <symbol id="icon-search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </symbol>
+    <symbol id="icon-cog" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="3"></circle>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l0 0a1.65 1.65 0 0 1-2.34 2.34l0 0a1.65 1.65 0 0 0-1.82.33l0 0a1.65 1.65 0 0 1-2.92-1.17l0 0a1.65 1.65 0 0 0-.5-1.09l-0.06-0.06a1.65 1.65 0 0 0-1.09-.5l0 0a1.65 1.65 0 0 1-1.17-2.92l0 0a1.65 1.65 0 0 0 .33-1.82l0 0a1.65 1.65 0 0 1 2.34-2.34l0 0a1.65 1.65 0 0 0 1.82-.33l0 0a1.65 1.65 0 0 1 2.92 1.17l0 0a1.65 1.65 0 0 0 .5 1.09l0.06 0.06a1.65 1.65 0 0 0 1.09.5l0 0a1.65 1.65 0 0 1 1.17 2.92z"></path>
+    </symbol>
+    <symbol id="icon-pencil" viewBox="0 0 24 24">
+      <path d="M12 20h9"></path>
+      <path d="M16.5 3.5a2.121 2.121 0 1 1 3 3L7 19l-4 1 1-4 12.5-12.5z"></path>
+    </symbol>
+  </svg>
 </body>
 </html>
