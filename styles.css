@@ -143,6 +143,19 @@ a {
   transform: none; /* removed float/animation */
 }
 
+.hero-inner {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 820px) {
+  .hero-inner {
+    grid-template-columns: 1.4fr 1.1fr;
+  }
+}
+
+
 
 /* ---- Work Grid ---- */
 .grid {
