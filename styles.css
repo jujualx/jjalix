@@ -99,125 +99,48 @@ a {
 
 /* ---- Hero ---- */
 .hero {
-  padding: 3.5rem 1.5rem 2.5rem;
-}
-
-.hero-inner {
-  display: grid;
-  gap: 2.5rem;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 80px 0;
 }
 
-@media (min-width: 820px) {
-  .hero-inner {
-    grid-template-columns: 1.4fr 1.1fr;
-  }
+.hero-content {
+  max-width: 540px;
+  margin-top: -40px;
 }
 
-/* Hero text animation */
-.hero-text {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.7s ease-out forwards;
-  animation-delay: 0.05s;
-}
-
-.eyebrow {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--muted);
+.hero-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  color: #7d7494;
+  margin-bottom: 12px;
 }
 
 .hero h1 {
-  font-size: clamp(2.4rem, 4vw, 3.1rem);
-  margin: 0.6rem 0;
+  font-size: 3.1rem;
+  line-height: 1.12;
+  font-weight: 700;
+  color: #1d1533;
+  margin-bottom: 20px;
 }
 
-.hero-subtitle {
-  color: var(--muted);
-  max-width: 480px;
+.hero-sub {
+  font-size: 1.05rem;
+  color: #6d6485;
+  max-width: 420px;
+  line-height: 1.6;
+  margin-bottom: 0;
 }
 
-.hero-subtitle strong {
-  color: var(--text);
-}
-
-.hero-links {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.7s ease-out forwards;
-  animation-delay: 0.18s;
-}
-
-.hero-links a {
-  padding: 0.7rem 1.3rem;
-  border-radius: var(--radius-pill);
-  cursor: pointer;
-  transition: all 0.18s ease;
-}
-
-.hero-links a:first-child {
-  background: linear-gradient(135deg, #ff9a8b, #ff6f91);
-  color: #fff;
-  box-shadow: var(--shadow-soft);
-}
-
-.hero-links a:first-child:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 22px 55px rgba(255, 111, 145, 0.45);
-}
-
-.hero-links a:last-child {
-  background: #fff;
-  border: 1px solid var(--border-subtle);
-}
-
-.hero-links a:last-child:hover {
-  background: var(--accent-soft);
-}
-
-/* Hero avatar card – fixed layout */
-.hero-visual {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 32px;
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-soft);
-  position: relative;
-  overflow: hidden;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  opacity: 0;
-  transform: translateY(22px);
-  animation: fadeUp 0.7s ease-out forwards, heroFloat 6s ease-in-out 0.7s infinite;
-  animation-delay: 0.25s, 0.7s;
-}
-
-.hero-visual::before {
-  content: "";
-  position: absolute;
-  inset: -40%;
-  background: radial-gradient(circle at top left, #ffe4f0, transparent 55%),
-    radial-gradient(circle at bottom right, #d6f3ff, transparent 55%);
-  opacity: 0.8;
-}
-
-.hero-visual img {
-  position: relative;
-  z-index: 1;
-  max-width: 340px;
-  width: 100%;
+.hero-image img {
+  width: 440px;
+  max-width: 100%;
   height: auto;
   object-fit: contain;
-  border-radius: 24px;
+  transform: translateY(-20px);
 }
 
 /* ---- Sections ---- */
@@ -229,7 +152,7 @@ a {
   font-size: 1.6rem;
 }
 
-/* ---- Work grid ---- */
+/* ---- Work Grid ---- */
 .grid {
   display: grid;
   gap: 1.5rem;
@@ -238,7 +161,6 @@ a {
   perspective: 1200px;
 }
 
-/* Project cards */
 .project {
   background: var(--card-bg);
   border-radius: var(--radius-lg);
@@ -250,25 +172,21 @@ a {
   height: 100%;
   position: relative;
   overflow: hidden;
-
   opacity: 0;
   transform: translateY(24px);
   transform-style: preserve-3d;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Scroll-in when visible */
 .project.in-view {
   animation: fadeUp 0.6s ease-out forwards;
 }
 
-/* Stagger timing */
 .project:nth-child(1).in-view { animation-delay: 0s; }
 .project:nth-child(2).in-view { animation-delay: 0.12s; }
 .project:nth-child(3).in-view { animation-delay: 0.24s; }
 .project:nth-child(4).in-view { animation-delay: 0.36s; }
 
-/* Hover tilt (no shimmer now) */
 .project:hover {
   transform: translateY(-6px) rotateX(3deg) rotateY(-3deg);
   box-shadow: 0 22px 55px rgba(53, 33, 83, 0.25);
@@ -278,7 +196,6 @@ a {
   margin-bottom: 0.75rem;
 }
 
-/* Tags */
 .tags {
   font-size: 0.78rem;
   letter-spacing: 0.12em;
@@ -287,7 +204,6 @@ a {
   margin-top: 0.6rem;
 }
 
-/* Button */
 .btn-pill {
   margin-top: auto;
   padding: 0.6rem 1rem;
@@ -323,7 +239,7 @@ a {
   50% { transform: translateY(-14px); }
 }
 
-/* ---- Process grid (case studies) ---- */
+/* ---- Case Study Process Grid ---- */
 .process-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -351,37 +267,6 @@ a {
 }
 
 .process-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  background: var(--accent-soft);
-  box-shadow: 0 10px 24px rgba(255, 111, 145, 0.25);
-}
-
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .hero-text,
-  .hero-links,
-  .hero-visual,
-  .project {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  .project:hover {
-    transform: none !important;
-    box-shadow: 0 10px 30px rgba(53, 33, 83, 0.08);
-  }
-}
-
-/* Process Icons */
-.process-icon {
   width: 46px;
   height: 46px;
   border-radius: 14px;
@@ -402,56 +287,19 @@ a {
   stroke-linejoin: round;
 }
 
-/* Hero Layout */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  padding: 80px 0;
-}
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .hero-text,
+  .hero-links,
+  .hero-visual,
+  .project {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 
-/* Remove buttons entirely */
-.hero-buttons {
-  display: none;
+  .project:hover {
+    transform: none !important;
+    box-shadow: 0 10px 30px rgba(53, 33, 83, 0.08);
+  }
 }
-
-/* HERO TEXT */
-.hero-content {
-  max-width: 540px;
-  margin-top: -40px;  /* pulls text higher to align with avatar */
-}
-
-.hero-label {
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
-  font-weight: 500;
-  color: #7d7494;
-  margin-bottom: 12px;
-}
-
-.hero h1 {
-  font-size: 3.1rem;
-  line-height: 1.12;
-  font-weight: 700;
-  color: #1d1533;
-  margin-bottom: 20px;
-}
-
-.hero-sub {
-  font-size: 1.05rem;
-  color: #6d6485;
-  max-width: 420px;
-  line-height: 1.6;
-  margin-bottom: 0; /* no big spacing since no buttons */
-}
-
-/* AVATAR */
-.hero-image img {
-  width: 440px;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  transform: translateY(-20px); /* raise avatar slightly for perfect alignment */
-}
-
