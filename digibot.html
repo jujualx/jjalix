@@ -1,117 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DigiBot – Creative Services</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DigiBot</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo">
-        <div class="logo-mark"></div>
-        <div class="logo-text">JULIA ALIX</div>
-      </div>
-      <nav class="nav">
-        <a href="index.html">Work</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
+  <div class="container">
+    <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-flex">
-        <div class="hero-content">
-          <span class="hero-label">DIGIBOT APP – CREATIVE SERVICES</span>
-          <h1>DigiBot</h1>
-          <p class="hero-sub">A creative app concept centered around visual collaboration and digital productivity.</p>
-        </div>
-        <div class="hero-avatar">
-          <img src="images/digibot-hero.png" alt="DigiBot Hero" />
-        </div>
-      </div>
+      <h1>Say Hello to DigiBot</h1>
+      <img src="images/digibot-hero.jpg" alt="DigiBot hero image" class="hero-image">
+      <p class="tagline">Your AI-powered digital assistant, designed to engage and assist users seamlessly.</p>
     </section>
-
-    <section>
-      <h2>Introduction</h2>
-      <ol>
-        <li>ABOUT THE APP</li>
-        <li>PACKAGE I OFFER ON THIS</li>
-        <li>PACKAGE INCLUSION</li>
-      </ol>
+    <!-- Introduction Sections -->
+    <section id="about">
+      <h2>About the App</h2>
+      <p>DigiBot is a cutting-edge AI chatbot platform that provides personalized support and information to users. It leverages advanced natural language processing to understand queries and deliver relevant responses, making digital interactions smarter and more efficient.</p>
     </section>
-
-    <section>
+    <section id="package-offer">
+      <h2>Package I Offer</h2>
+      <p>For the DigiBot project, I provided a comprehensive development package. This package covers the full project lifecycle, including initial concept development, brand design, user experience planning, and end-to-end application implementation. My role spanned from product strategy to design and technical development to ensure a cohesive and successful outcome for the client.</p>
+    </section>
+    <section id="package-inclusion">
+      <h2>Package Inclusion</h2>
+      <ul>
+        <li><strong>Brand Identity Design:</strong> Created a unique logo, color scheme, and typography set for DigiBot to establish a memorable brand.</li>
+        <li><strong>UX/UI Wireframing:</strong> Developed detailed wireframes and interactive prototypes to map out the user journey and interface layouts.</li>
+        <li><strong>Full-Stack Development:</strong> Implemented the web application front-end and back-end, integrating AI functionalities and ensuring a responsive design.</li>
+        <li><strong>Testing & Deployment:</strong> Conducted thorough testing and provided deployment support for a smooth launch.</li>
+      </ul>
+    </section>
+    <!-- Process Section -->
+    <section id="process">
       <h2>Process</h2>
-      <div class="process-grid">
-        <div class="process-step">
-          <div class="process-icon">
-            <svg><use href="#icon-search"></use></svg>
-          </div>
-          <h4>Research</h4>
-          <p>User interviews, competitor analysis, feature prioritization.</p>
+      <div class="process-steps">
+        <div class="step">
+          <img src="images/icon-research.png" alt="Research icon" class="step-icon">
+          <h3>Research & Planning</h3>
+          <p>Conducted market research and gathered requirements to inform DigiBot's features and design, ensuring the solution meets user needs.</p>
         </div>
-        <div class="process-step">
-          <div class="process-icon">
-            <svg><use href="#icon-cog"></use></svg>
-          </div>
-          <h4>Implementation</h4>
-          <p>UX flows, low-fidelity wireframes, prototyping.</p>
+        <div class="step">
+          <img src="images/icon-design.png" alt="Design icon" class="step-icon">
+          <h3>Design</h3>
+          <p>Created initial sketches and detailed wireframes, followed by high-fidelity mockups. Established a clear visual language and user-friendly interface through iterative design reviews.</p>
         </div>
-        <div class="process-step">
-          <div class="process-icon">
-            <svg><use href="#icon-pencil"></use></svg>
-          </div>
-          <h4>Design</h4>
-          <p>UI visuals, typography, iconography, illustration-led design.</p>
+        <div class="step">
+          <img src="images/icon-development.png" alt="Development icon" class="step-icon">
+          <h3>Implementation</h3>
+          <p>Developed the DigiBot application using modern web technologies. Integrated the AI backend and refined functionality through testing to ensure a robust final product.</p>
         </div>
       </div>
     </section>
-
-    <section>
+    <!-- Design Samples Section -->
+    <section id="design-samples">
       <h2>Design Samples</h2>
-      <div class="grid">
-        <div class="project">
-          <img src="images/digibot-branding.png" alt="Branding Preview" />
-          <h3>Branding</h3>
-        </div>
-        <div class="project">
-          <img src="images/digibot-wireframe.png" alt="Wireframe Preview" />
-          <h3>Wireframe</h3>
-        </div>
-        <div class="project">
-          <img src="images/digibot-site.png" alt="Site Preview" />
-          <h3>Site</h3>
-        </div>
+      <div class="samples">
+        <details>
+          <summary><img src="images/digibot-branding-thumb.jpg" alt="DigiBot Branding thumbnail"> <span>Branding</span></summary>
+          <div class="sample-content">
+            <h3>Branding Design</h3>
+            <p>I crafted a bold and modern visual identity for DigiBot. Shown here are the primary logo and style guide defining the brand's colors and typography.</p>
+            <img src="images/digibot-branding-full.jpg" alt="Full DigiBot branding design sample">
+          </div>
+        </details>
+        <details>
+          <summary><img src="images/digibot-wireframe-thumb.jpg" alt="DigiBot Wireframe thumbnail"> <span>Wireframe</span></summary>
+          <div class="sample-content">
+            <h3>Wireframes</h3>
+            <p>I created detailed wireframe mockups for key screens to visualize and refine the user flow before moving into visual design and development.</p>
+            <img src="images/digibot-wireframe-full.jpg" alt="Full DigiBot wireframe sample">
+          </div>
+        </details>
+        <details>
+          <summary><img src="images/digibot-site-thumb.jpg" alt="DigiBot Site thumbnail"> <span>Live Site</span></summary>
+          <div class="sample-content">
+            <h3>Live Site Preview</h3>
+            <p>The final DigiBot web application features a clean design, intuitive navigation, and an interactive chatbot interface — all fully aligned with the branding.</p>
+            <img src="images/digibot-site-full.jpg" alt="Screenshot of the live DigiBot site">
+          </div>
+        </details>
       </div>
     </section>
-
-    <section>
-      <h2>Prototype</h2>
-      <div class="project">
-        <img src="images/digibot-prototype.png" alt="Prototype preview" />
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">&copy; 2025 Julia Alix. All rights reserved.</footer>
-
-  <svg style="display:none">
-    <symbol id="icon-search" viewBox="0 0 24 24">
-      <circle cx="11" cy="11" r="8"></circle>
-      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-    </symbol>
-    <symbol id="icon-cog" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="3"></circle>
-      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l0 0a1.65 1.65 0 0 1-2.34 2.34l0 0a1.65 1.65 0 0 0-1.82.33l0 0a1.65 1.65 0 0 1-2.92-1.17l0 0a1.65 1.65 0 0 0-.5-1.09l-0.06-0.06a1.65 1.65 0 0 0-1.09-.5l0 0a1.65 1.65 0 0 1-1.17-2.92l0 0a1.65 1.65 0 0 0 .33-1.82l0 0a1.65 1.65 0 0 1 2.34-2.34l0 0a1.65 1.65 0 0 0 1.82-.33l0 0a1.65 1.65 0 0 1 2.92 1.17l0 0a1.65 1.65 0 0 0 .5 1.09l0.06 0.06a1.65 1.65 0 0 0 1.09.5l0 0a1.65 1.65 0 0 1 1.17 2.92z"></path>
-    </symbol>
-    <symbol id="icon-pencil" viewBox="0 0 24 24">
-      <path d="M12 20h9"></path>
-      <path d="M16.5 3.5a2.121 2.121 0 1 1 3 3L7 19l-4 1 1-4 12.5-12.5z"></path>
-    </symbol>
-  </svg>
+  </div>
 </body>
 </html>
