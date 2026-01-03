@@ -312,15 +312,16 @@ a {
     box-shadow: 0 10px 30px rgba(53, 33, 83, 0.08);
   }
 
-.logo {
-  display: flex;
-  align-items: center;
+.logo-mark-image {
+  height: 38px;
+  opacity: 0.95;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.logo-mark-image {
-  height: 36px;   /* ideal header size */
-  width: auto;
-  display: block;
+.logo-mark-image:hover {
+  transform: translateY(-1px);
+  opacity: 1;
 }
+
 }
 
