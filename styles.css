@@ -66,14 +66,38 @@ a {
 .nav a {
   padding: 0.35rem 0.9rem;
   border-radius: var(--radius-pill);
-  color: var(--muted);
   transition: all 0.2s ease;
+
+  /* ✅ uniform text style */
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--muted);
 }
 
 .nav a:hover {
   background: var(--accent-soft);
   color: var(--text);
   transform: translateY(-1px);
+}
+
+/* ✅ Logo (ICON + TEXT) */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between icon and text */
+}
+
+.logo-icon {
+  height: 14px; /* same “weight” as old dot */
+  width: auto;
+  display: block;
+}
+
+.logo-text {
+  /* ✅ make it match nav exactly */
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--muted);
 }
 
 /* ---- Hero ---- */
@@ -168,8 +192,6 @@ a {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-
-
 .project.in-view {
   animation: fadeUp 0.6s ease-out forwards;
 }
@@ -198,7 +220,6 @@ a {
   text-transform: uppercase;
   color: var(--muted);
   margin-top: auto;
-
 }
 
 .btn-pill {
@@ -291,22 +312,4 @@ a {
     transform: none !important;
     box-shadow: 0 10px 30px rgba(53, 33, 83, 0.08);
   }
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 8px; /* space between icon and text */
 }
-
-.logo-icon {
-  height: 14px;   /* SAME visual size as old dot */
-  width: auto;
-  display: block;
-}
-
-.logo-text {
-  font-size: 16px;
-  font-weight: 500;
-}
-
-
