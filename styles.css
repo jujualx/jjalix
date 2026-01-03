@@ -311,4 +311,16 @@ a {
     transform: none !important;
     box-shadow: 0 10px 30px rgba(53, 33, 83, 0.08);
   }
+
+.logo {
+  display: flex;
+  align-items: center;
 }
+
+.logo-mark-image {
+  height: 36px;   /* ideal header size */
+  width: auto;
+  display: block;
+}
+}
+
