@@ -318,10 +318,10 @@ a {
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.logo-mark-image:hover {
-  transform: translateY(-1px);
-  opacity: 1;
-}
-
+.logo-mark-image {
+  height: 26px;   /* matches original text logo height */
+  width: auto;
+  display: block;
+  opacity: 0.95;
 }
 
