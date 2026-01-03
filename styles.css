@@ -58,26 +58,6 @@ a {
   align-items: center;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.logo-mark {
-  width: 26px;
-  height: 26px;
-  border-radius: 40%;
-  background: conic-gradient(from 160deg, #ff9a8b, #ff99ac, #fecfef, #f6f0ff, #ff9a8b);
-  box-shadow: 0 10px 25px rgba(255, 111, 145, 0.4);
-}
-
-.logo-text {
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-}
-
 .nav {
   display: flex;
   gap: 1rem;
