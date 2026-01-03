@@ -312,16 +312,13 @@ a {
     box-shadow: 0 10px 30px rgba(53, 33, 83, 0.08);
   }
 
-.logo-mark-image {
-  height: 38px;
-  opacity: 0.95;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 .logo-mark-image {
-  height: 26px;   /* matches original text logo height */
-  width: auto;
   display: block;
-  opacity: 0.95;
+
 }
 
