@@ -83,5 +83,17 @@
       <p>© Julia Alix. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+  // Adds .in-view when cards enter viewport (same behavior as homepage)
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("in-view");
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll(".client-card").forEach(card => observer.observe(card));
+</script>
+
 </body>
 </html>
