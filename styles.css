@@ -295,14 +295,13 @@ a {
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 8px; /* space between icon and text */
 }
 
-.logo-mark {
-  width: 10px;
-  height: 10px;
-  background-color: #ff8fb1; /* BusyBee pink */
-  border-radius: 50%;
+.logo-icon {
+  height: 14px;   /* SAME visual size as old dot */
+  width: auto;
+  display: block;
 }
 
 .logo-text {
