@@ -206,7 +206,8 @@ a {
 .project:hover {
   transform: translateY(-6px);
   box-shadow:
-    0 18px 45px rgba(53, 33, 83, 0.15);
+    0 16px 40px rgba(255, 111, 145, 0.25),
+    inset 0 0 0 1px rgba(255, 180, 200, 0.6);
 }
 
 
