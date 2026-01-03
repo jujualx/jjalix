@@ -315,24 +315,19 @@ a {
 .logo {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
-.logo-link {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* space between icon and text */
-  text-decoration: none;
-}
-
-.logo-mark-image {
-  display: block;
+.logo-mark {
+  width: 10px;
+  height: 10px;
+  background-color: #ff8fb1; /* BusyBee pink */
+  border-radius: 50%;
 }
 
 .logo-text {
-  font-size: 16px;      /* match nav text */
+  font-size: 16px;
   font-weight: 500;
-  color: #111;
-  letter-spacing: 0.02em;
-
 }
+
 
