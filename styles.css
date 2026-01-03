@@ -205,8 +205,11 @@ a {
 
 .project:hover {
   transform: translateY(-6px) rotateX(3deg) rotateY(-3deg);
-  box-shadow: 0 22px 55px rgba(53, 33, 83, 0.25);
+  box-shadow:
+    0 20px 40px rgba(255, 111, 145, 0.25),
+    0 8px 18px rgba(255, 200, 220, 0.35);
 }
+
 
 .project img {
   display: block;
