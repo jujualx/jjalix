@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Graphic Design – Client Works | Julia Alix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Use the SAME stylesheet as BusyBee so colors + vibe match -->
+  <link rel="stylesheet" href="styles.css" />
+
+<body>
+  <!-- Header (same structure as BusyBee pages) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-mark"></span>
+        <span class="logo-text">Julia Alix</span>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container gd-wrap">
+
+    <!-- Euroffice -->
+    <section class="client-group">
+      <h2 class="client-title">Euroffice (UK Client)</h2>
+      <div class="client-grid">
+        <div class="client-card"></div>
+        <div class="client-card"></div>
+        <div class="client-card"></div>
+      </div>
+    </section>
+
+    <!-- Capslock -->
+    <section class="client-group">
+      <h2 class="client-title">Capslock (Chinese Client)</h2>
+      <div class="client-grid">
+        <div class="client-card"></div>
+        <div class="client-card"></div>
+        <div class="client-card"></div>
+      </div>
+    </section>
+
+    <!-- Affinity Express -->
+    <section class="client-group">
+      <h2 class="client-title">Affinity Express (Australian Client)</h2>
+      <div class="client-grid">
+        <div class="client-card"></div>
+        <div class="client-card"></div>
+        <div class="client-card"></div>
+      </div>
+    </section>
+
+    <!-- UnaMarket -->
+    <section class="client-group">
+      <h2 class="client-title">UnaMarket (Russian Client)</h2>
+      <div class="client-grid">
+        <div class="client-card"></div>
+        <div class="client-card"></div>
+        <div class="client-card"></div>
+      </div>
+    </section>
+
+    <!-- Nestle & Hallmark Philippines -->
+    <section class="client-group" style="margin-bottom:0;">
+      <h2 class="client-title">Nestle &amp; Hallmark Philippines</h2>
+      <div class="client-grid">
+        <div class="client-card"></div>
+        <div class="client-card"></div>
+        <div class="client-card"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© Julia Alix. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
