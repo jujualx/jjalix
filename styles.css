@@ -204,10 +204,9 @@ a {
 .project:nth-child(4).in-view { animation-delay: 0.36s; }
 
 .project:hover {
-  transform: translateY(-6px) rotateX(3deg) rotateY(-3deg);
+  transform: translateY(-6px);
   box-shadow:
-    0 20px 40px rgba(255, 111, 145, 0.25),
-    0 8px 18px rgba(255, 200, 220, 0.35);
+    0 18px 45px rgba(53, 33, 83, 0.15);
 }
 
 
