@@ -1,84 +1,89 @@
-/* Page-only styles (keeps your existing colors + card behavior from styles.css) */
+/* =======================================================
+   MARKETING BANNERS – Page Specific Styles
+   Uses existing styles.css design tokens
+   ======================================================= */
+
+
+/* =========================
+   HERO SECTION
+========================= */
 
 .mb-hero {
   position: relative;
   overflow: hidden;
   border-bottom-left-radius: 28px;
   border-bottom-right-radius: 28px;
-  margin: 0 0 34px;
+  margin: 0 0 40px;
 }
 
-/* uses your uploaded file in repo root */
+/* Background image */
 .mb-hero-bg {
-  height: 320px;
+  height: 380px;
   background-image: url("Header_Marketing.png");
   background-size: cover;
   background-position: center;
-  filter: saturate(1.02);
+  position: relative;
 }
 
-.mb-hero-inner {
+/* Soft overlay for readability */
+.mb-hero-bg::after {
+  content: "";
   position: absolute;
   inset: 0;
-  display: grid;
-  align-content: center;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.10) 0%,
+    rgba(0, 0, 0, 0.25) 55%,
+    rgba(0, 0, 0, 0.40) 100%
+  );
+}
+
+/* Text container — moved LOWER to avoid laptop overlap */
+.mb-hero-inner {
+  position: absolute;
+  bottom: 70px;   /* Key change */
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
-  padding: 0 16px;
+  padding: 0 24px;
+  color: white;
 }
 
 .mb-hero-kicker {
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   opacity: 0.9;
 }
 
 .mb-hero-title {
   margin: 0;
-  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-size: clamp(2.2rem, 3vw, 3rem);
   line-height: 1.05;
+  font-weight: 700;
 }
 
 .mb-hero-sub {
-  max-width: 58ch;
+  max-width: 56ch;
   margin: 0;
   opacity: 0.9;
+  font-size: 0.95rem;
 }
 
-.mb-hero-actions {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
 
-.mb-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0,0.06);
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(10px);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.mb-pill:hover {
-  transform: translateY(-1px);
-}
-
-.mb-pill-ghost {
-  background: rgba(255,255,255,0.55);
-}
+/* =========================
+   MAIN CONTENT
+========================= */
 
 .mb-main {
-  padding: 0 0 60px;
+  padding: 0 0 70px;
 }
 
 .mb-section {
-  padding: 26px 0 34px;
+  padding: 30px 0 40px;
 }
 
 .mb-section-head {
@@ -86,7 +91,7 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 16px;
-  margin: 0 0 16px;
+  margin-bottom: 18px;
 }
 
 .mb-section-title {
@@ -98,45 +103,59 @@
 .mb-section-sub {
   margin: 4px 0 0;
   font-size: 0.85rem;
-  opacity: 0.75;
+  opacity: 0.7;
 }
+
+
+/* =========================
+   GRID LAYOUT
+========================= */
 
 .mb-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
+  gap: 24px;
 }
 
-/* responsive */
+/* Responsive */
 @media (max-width: 900px) {
   .mb-grid {
     grid-template-columns: 1fr;
   }
+
   .mb-hero-bg {
-    height: 260px;
+    height: 300px;
+  }
+
+  .mb-hero-inner {
+    bottom: 50px;
   }
 }
 
-/* Card matches your existing card vibe */
+
+/* =========================
+   CARD STYLE
+   (Matches your main site)
+========================= */
+
 .mb-card {
-  background: var(--card-bg, #fff);
+  background: var(--card-bg, #ffffff);
   border-radius: var(--radius-lg, 24px);
-  border: 1px solid var(--border-subtle, rgba(0,0,0,0.06));
+  border: 1px solid var(--border-subtle, rgba(0, 0, 0, 0.05));
   box-shadow: var(--shadow-soft, 0 18px 45px rgba(53, 33, 83, 0.12));
-  padding: 14px;
-  transition: transform 160ms ease, box-shadow 160ms ease;
+  padding: 16px;
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .mb-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
 }
 
 .mb-card-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  margin: 0 0 10px;
+  margin-bottom: 12px;
 }
 
 .mb-card-title {
@@ -146,32 +165,42 @@
   opacity: 0.9;
 }
 
+
+/* =========================
+   CAROUSEL CONTROLS
+========================= */
+
 .mb-card-controls {
   display: inline-flex;
   gap: 8px;
 }
 
 .mb-iconbtn {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 999px;
-  border: 1px solid rgba(0,0,0,0.08);
-  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.95);
   cursor: pointer;
   font-size: 18px;
   line-height: 1;
+  transition: transform 120ms ease;
 }
 
 .mb-iconbtn:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
-/* Carousel */
+
+/* =========================
+   CAROUSEL STRUCTURE
+========================= */
+
 .mb-carousel {
   overflow: hidden;
-  border-radius: 18px;
-  border: 1px solid rgba(0,0,0,0.06);
-  background: rgba(0,0,0,0.02);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: rgba(0, 0, 0, 0.02);
 }
 
 .mb-track {
@@ -179,7 +208,7 @@
   grid-auto-flow: column;
   grid-auto-columns: 100%;
   transform: translateX(0);
-  transition: transform 220ms ease;
+  transition: transform 250ms ease;
   touch-action: pan-y;
 }
 
@@ -189,29 +218,40 @@
   display: block;
 }
 
-/* Dots */
+
+/* =========================
+   DOT INDICATORS
+========================= */
+
 .mb-dots {
   display: flex;
   justify-content: center;
   gap: 6px;
-  padding: 10px 0 12px;
-  background: rgba(255,255,255,0.75);
+  padding: 12px 0;
+  background: rgba(255, 255, 255, 0.75);
 }
 
 .mb-dot {
   width: 6px;
   height: 6px;
   border-radius: 999px;
-  background: rgba(0,0,0,0.18);
+  background: rgba(0, 0, 0, 0.2);
+  transition: width 160ms ease;
 }
 
 .mb-dot.is-active {
-  width: 18px;
-  background: rgba(0,0,0,0.35);
+  width: 20px;
+  background: rgba(0, 0, 0, 0.4);
 }
 
+
+/* =========================
+   FOOTER
+========================= */
+
 .mb-footer {
-  padding: 24px 0 0;
-  opacity: 0.7;
+  padding-top: 30px;
+  opacity: 0.6;
   font-size: 0.85rem;
+  text-align: center;
 }
