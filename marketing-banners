@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marketing Banners | Julia Alix</title>
+
+  <!-- Your existing global styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Page-specific (small + safe) overrides -->
+  <link rel="stylesheet" href="marketing-banners.css" />
+</head>
+
+<body>
+
+  <!-- Header (keeps your existing vibe) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Back to home">
+        <span class="logo-mark">✦</span>
+        <span class="logo-text">Julia Alix</span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="mb-hero" aria-label="Marketing Banners hero">
+    <div class="mb-hero-bg" role="img" aria-label="Marketing banner header image"></div>
+    <div class="container mb-hero-inner">
+      <p class="mb-hero-kicker">Graphic Design Works</p>
+      <h1 class="mb-hero-title">Marketing Banners</h1>
+      <p class="mb-hero-sub">
+        A curated set of campaign creatives designed for clarity, engagement, and brand consistency.
+      </p>
+
+      <div class="mb-hero-actions">
+        <a class="mb-pill" href="index.html#work">← Back to Work</a>
+        <a class="mb-pill mb-pill-ghost" href="#gallery">View Gallery ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page Content -->
+  <main class="mb-main" id="gallery">
+    <div class="container">
+
+      <!-- SECTION 1 -->
+      <section class="mb-section">
+        <header class="mb-section-head">
+          <div>
+            <h2 class="mb-section-title">Euroffice UK</h2>
+            <p class="mb-section-sub">LinkedIn Campaigns (B2C)</p>
+          </div>
+        </header>
+
+        <div class="mb-grid">
+          <!-- Card 1 -->
+          <article class="mb-card">
+            <div class="mb-card-top">
+              <h3 class="mb-card-title">Page Posts</h3>
+              <div class="mb-card-controls" aria-label="Carousel controls">
+                <button class="mb-iconbtn" type="button" data-carousel-prev aria-label="Previous">‹</button>
+                <button class="mb-iconbtn" type="button" data-carousel-next aria-label="Next">›</button>
+              </div>
+            </div>
+
+            <div class="mb-carousel" data-carousel>
+              <div class="mb-track">
+                <img class="mb-slide" src="Page%20Posts%20Frame-1.png" alt="Euroffice UK page post creative 1" />
+                <img class="mb-slide" src="Page%20Posts%20Frame-2.png" alt="Euroffice UK page post creative 2" />
+              </div>
+
+              <div class="mb-dots" aria-hidden="true">
+                <span class="mb-dot is-active"></span>
+                <span class="mb-dot"></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="mb-card">
+            <div class="mb-card-top">
+              <h3 class="mb-card-title">Page Posts</h3>
+              <div class="mb-card-controls" aria-label="Carousel controls">
+                <button class="mb-iconbtn" type="button" data-carousel-prev aria-label="Previous">‹</button>
+                <button class="mb-iconbtn" type="button" data-carousel-next aria-label="Next">›</button>
+              </div>
+            </div>
+
+            <div class="mb-carousel" data-carousel>
+              <div class="mb-track">
+                <img class="mb-slide" src="Page%20Posts%20Frame-3.png" alt="Euroffice UK page post creative 3" />
+                <img class="mb-slide" src="Page%20Posts%20Frame-4.png" alt="Euroffice UK page post creative 4" />
+              </div>
+
+              <div class="mb-dots" aria-hidden="true">
+                <span class="mb-dot is-active"></span>
+                <span class="mb-dot"></span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION 2 -->
+      <section class="mb-section">
+        <header class="mb-section-head">
+          <div>
+            <h2 class="mb-section-title">Office Power UK</h2>
+            <p class="mb-section-sub">Facebook Campaigns (B2B)</p>
+          </div>
+        </header>
+
+        <div class="mb-grid">
+          <article class="mb-card">
+            <div class="mb-card-top">
+              <h3 class="mb-card-title">Page Posts</h3>
+              <div class="mb-card-controls" aria-label="Carousel controls">
+                <button class="mb-iconbtn" type="button" data-carousel-prev aria-label="Previous">‹</button>
+                <button class="mb-iconbtn" type="button" data-carousel-next aria-label="Next">›</button>
+              </div>
+            </div>
+
+            <div class="mb-carousel" data-carousel>
+              <div class="mb-track">
+                <img class="mb-slide" src="Page%20Posts%20Frame-5.png" alt="Office Power UK creative 1" />
+                <img class="mb-slide" src="Page%20Posts%20Frame.png" alt="Office Power UK creative 2" />
+              </div>
+
+              <div class="mb-dots" aria-hidden="true">
+                <span class="mb-dot is-active"></span>
+                <span class="mb-dot"></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="mb-card">
+            <div class="mb-card-top">
+              <h3 class="mb-card-title">Page Posts</h3>
+              <div class="mb-card-controls" aria-label="Carousel controls">
+                <button class="mb-iconbtn" type="button" data-carousel-prev aria-label="Previous">‹</button>
+                <button class="mb-iconbtn" type="button" data-carousel-next aria-label="Next">›</button>
+              </div>
+            </div>
+
+            <!-- reusing frames so layout matches your mock -->
+            <div class="mb-carousel" data-carousel>
+              <div class="mb-track">
+                <img class="mb-slide" src="Page%20Posts%20Frame-2.png" alt="Office Power UK creative 3" />
+                <img class="mb-slide" src="Page%20Posts%20Frame-4.png" alt="Office Power UK creative 4" />
+              </div>
+
+              <div class="mb-dots" aria-hidden="true">
+                <span class="mb-dot is-active"></span>
+                <span class="mb-dot"></span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION 3 -->
+      <section class="mb-section">
+        <header class="mb-section-head">
+          <div>
+            <h2 class="mb-section-title">UnaMarket</h2>
+            <p class="mb-section-sub">Instagram Campaign Launch</p>
+          </div>
+        </header>
+
+        <div class="mb-grid">
+          <article class="mb-card">
+            <div class="mb-card-top">
+              <h3 class="mb-card-title">Page Posts</h3>
+              <div class="mb-card-controls" aria-label="Carousel controls">
+                <button class="mb-iconbtn" type="button" data-carousel-prev aria-label="Previous">‹</button>
+                <button class="mb-iconbtn" type="button" data-carousel-next aria-label="Next">›</button>
+              </div>
+            </div>
+
+            <div class="mb-carousel" data-carousel>
+              <div class="mb-track">
+                <img class="mb-slide" src="Page%20Posts%20Frame-1.png" alt="UnaMarket creative 1" />
+                <img class="mb-slide" src="Page%20Posts%20Frame-3.png" alt="UnaMarket creative 2" />
+              </div>
+
+              <div class="mb-dots" aria-hidden="true">
+                <span class="mb-dot is-active"></span>
+                <span class="mb-dot"></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="mb-card">
+            <div class="mb-card-top">
+              <h3 class="mb-card-title">Page Posts</h3>
+              <div class="mb-card-controls" aria-label="Carousel controls">
+                <button class="mb-iconbtn" type="button" data-carousel-prev aria-label="Previous">‹</button>
+                <button class="mb-iconbtn" type="button" data-carousel-next aria-label="Next">›</button>
+              </div>
+            </div>
+
+            <div class="mb-carousel" data-carousel>
+              <div class="mb-track">
+                <img class="mb-slide" src="Page%20Posts%20Frame-4.png" alt="UnaMarket creative 3" />
+                <img class="mb-slide" src="Page%20Posts%20Frame-5.png" alt="UnaMarket creative 4" />
+              </div>
+
+              <div class="mb-dots" aria-hidden="true">
+                <span class="mb-dot is-active"></span>
+                <span class="mb-dot"></span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="mb-footer">
+        <p>© Julia Jasmin Alix. All rights reserved.</p>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- Tiny carousel script -->
+  <script>
+    (function () {
+      const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+
+      document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+        const track = carousel.querySelector(".mb-track");
+        const slides = Array.from(carousel.querySelectorAll(".mb-slide"));
+        const dots = Array.from(carousel.querySelectorAll(".mb-dot"));
+        const card = carousel.closest(".mb-card");
+
+        let index = 0;
+
+        function go(to) {
+          index = clamp(to, 0, slides.length - 1);
+          const slideWidth = slides[0].getBoundingClientRect().width;
+          track.style.transform = `translateX(${-index * slideWidth}px)`;
+
+          dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
+        }
+
+        const prev = card.querySelector("[data-carousel-prev]");
+        const next = card.querySelector("[data-carousel-next]");
+
+        prev?.addEventListener("click", () => go(index - 1));
+        next?.addEventListener("click", () => go(index + 1));
+
+        // swipe-ish (drag)
+        let startX = null;
+        track.addEventListener("pointerdown", (e) => {
+          startX = e.clientX;
+          track.setPointerCapture(e.pointerId);
+        });
+        track.addEventListener("pointerup", (e) => {
+          if (startX == null) return;
+          const dx = e.clientX - startX;
+          startX = null;
+
+          if (Math.abs(dx) > 40) go(index + (dx < 0 ? 1 : -1));
+        });
+
+        // resize-safe
+        window.addEventListener("resize", () => go(index));
+
+        go(0);
+      });
+    })();
+  </script>
+</body>
+</html>
