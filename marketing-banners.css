@@ -25,23 +25,12 @@
   position: relative;
 }
 
-/* Soft overlay for readability */
-.mb-hero-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.10) 0%,
-    rgba(0, 0, 0, 0.25) 55%,
-    rgba(0, 0, 0, 0.40) 100%
-  );
-}
+/* ⛔ Overlay removed */
 
-/* Text container — moved LOWER to avoid laptop overlap */
+/* Text container — positioned lower to avoid laptop overlap */
 .mb-hero-inner {
   position: absolute;
-  bottom: 70px;   /* Key change */
+  bottom: 70px;
   left: 0;
   right: 0;
   z-index: 2;
@@ -49,14 +38,14 @@
   flex-direction: column;
   gap: 10px;
   padding: 0 24px;
-  color: white;
+  color: white; /* Keep white text since banner is gradient */
 }
 
 .mb-hero-kicker {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   font-size: 0.75rem;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .mb-hero-title {
@@ -69,7 +58,7 @@
 .mb-hero-sub {
   max-width: 56ch;
   margin: 0;
-  opacity: 0.9;
+  opacity: 0.95;
   font-size: 0.95rem;
 }
 
@@ -135,7 +124,6 @@
 
 /* =========================
    CARD STYLE
-   (Matches your main site)
 ========================= */
 
 .mb-card {
