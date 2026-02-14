@@ -6,41 +6,49 @@
 
 /* =========================
    HERO SECTION
+   Desktop: Text LEFT, Image RIGHT
+   Mobile: Text overlays image
 ========================= */
 
 .mb-hero {
-  position: relative;
-  overflow: hidden;
-  border-bottom-left-radius: 28px;
-  border-bottom-right-radius: 28px;
   margin: 0 0 40px;
 }
 
-/* Background image */
-.mb-hero-bg {
-  height: 380px;
-  background-image: url("Header_Marketing.png");
-  background-size: cover;
-  background-position: center;
-  position: relative;
+.mb-hero-wrap {
+  overflow: hidden;
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
 }
 
-/* ⛔ Overlay removed */
+/* 2-column desktop layout */
+.mb-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 520px) 1fr;
+  align-items: stretch;
+  min-height: 380px;
+}
 
-/* Text container — positioned lower to avoid laptop overlap */
-.mb-hero-inner {
-  position: absolute;
-  bottom: 70px;
-  left: 0;
-  right: 0;
-  z-index: 2;
+/* LEFT SIDE — TEXT */
+.mb-hero-copy {
+  padding: 64px 28px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 0 24px;
-  color: white; /* Keep white text since banner is gradient */
+  justify-content: center;
+  gap: 12px;
+
+  color: #ffffff;
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
 }
 
+/* RIGHT SIDE — IMAGE */
+.mb-hero-visual {
+  min-height: 380px;
+  background-image: url("Header_Marketing.png");
+  background-size: cover;
+  background-position: right center;
+}
+
+/* Text styling */
 .mb-hero-kicker {
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -60,6 +68,52 @@
   margin: 0;
   opacity: 0.95;
   font-size: 0.95rem;
+}
+
+
+/* =========================
+   MOBILE HERO (Overlay Mode)
+========================= */
+
+@media (max-width: 900px) {
+
+  .mb-hero-grid {
+    grid-template-columns: 1fr;
+    position: relative;
+  }
+
+  /* Banner full width on top */
+  .mb-hero-visual {
+    min-height: 320px;
+    background-position: center;
+  }
+
+  /* Text overlays on top of banner */
+  .mb-hero-copy {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 20px;
+    z-index: 2;
+
+    padding: 18px;
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    color: #ffffff;
+    text-shadow: 0 12px 30px rgba(0,0,0,0.3);
+  }
+
+  .mb-hero-title {
+    font-size: clamp(1.8rem, 6vw, 2.3rem);
+  }
+
+  .mb-hero-sub {
+    font-size: 0.9rem;
+  }
 }
 
 
@@ -106,18 +160,9 @@
   gap: 24px;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .mb-grid {
     grid-template-columns: 1fr;
-  }
-
-  .mb-hero-bg {
-    height: 300px;
-  }
-
-  .mb-hero-inner {
-    bottom: 50px;
   }
 }
 
