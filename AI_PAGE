@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Content Creation | Julia Alix</title>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .email-template-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 40px;
+    }
+
+    .email-template-card {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      border-radius: 24px;
+      padding: 18px;
+      box-shadow: 0 18px 45px rgba(255, 111, 145, 0.16);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .email-template-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 55px rgba(255, 111, 145, 0.22);
+    }
+
+    .email-template-card img {
+      width: 100%;
+      display: block;
+      border-radius: 18px;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .email-template-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <a href="index.html" class="logo">☾ Julia Alix</a>
+
+    <nav>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="inner-hero">
+      <p class="eyebrow">SENIOR DESIGNER</p>
+      <h1>AI Content Creation</h1>
+      <p>
+        Here are few of my AI Content Creations inspired using Klaviyo Templates.
+      </p>
+
+      <img src="Moon.png" alt="Julia Alix avatar" class="inner-avatar" />
+    </section>
+
+    <section class="work-section">
+      <div class="section-heading">
+        <h2>Email Template Designs</h2>
+        <p>AI-generated content visuals presented in a simple two-column layout.</p>
+      </div>
+
+      <div class="email-template-grid">
+        <div class="email-template-card">
+          <img src="Email_1.jpg" alt="AI generated email template design 1" />
+        </div>
+
+        <div class="email-template-card">
+          <img src="Email_2.jpg" alt="AI generated email template design 2" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © Julia Jasmin Alix. All rights reserved.
+  </footer>
+</body>
+</html>
