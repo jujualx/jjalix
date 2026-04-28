@@ -2,90 +2,137 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AI Content Creation | Julia Alix</title>
 
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="marketing-banners.css" />
 
   <style>
-    .email-template-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
-      margin-top: 40px;
-    }
-
-    .email-template-card {
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid rgba(255, 255, 255, 0.65);
+    .email-frame {
+      background: #ffffff;
+      padding: 16px;
       border-radius: 24px;
-      padding: 18px;
-      box-shadow: 0 18px 45px rgba(255, 111, 145, 0.16);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .email-template-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 24px 55px rgba(255, 111, 145, 0.22);
-    }
-
-    .email-template-card img {
+    .email-frame img {
       width: 100%;
       display: block;
       border-radius: 18px;
-      object-fit: cover;
-    }
-
-    @media (max-width: 768px) {
-      .email-template-grid {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
 
 <body>
-  <header class="site-header">
-    <a href="index.html" class="logo">☾ Julia Alix</a>
 
-    <nav>
-      <a href="index.html#work">Work</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Back to home">
+        <span class="logo-mark">☾</span>
+        <span class="logo-text">Julia Alix</span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="inner-hero">
-      <p class="eyebrow">SENIOR DESIGNER</p>
-      <h1>AI Content Creation</h1>
-      <p>
-        Here are few of my AI Content Creations inspired using Klaviyo Templates.
-      </p>
 
-      <img src="Moon.png" alt="Julia Alix avatar" class="inner-avatar" />
-    </section>
+    <!-- HERO -->
+    <section class="mb-landing-hero" aria-label="AI Content Creation hero">
+      <div class="container mb-landing-hero-inner">
 
-    <section class="work-section">
-      <div class="section-heading">
-        <h2>Email Template Designs</h2>
-        <p>AI-generated content visuals presented in a simple two-column layout.</p>
-      </div>
-
-      <div class="email-template-grid">
-        <div class="email-template-card">
-          <img src="Email_1.jpg" alt="AI generated email template design 1" />
+        <div class="mb-landing-hero-copy">
+          <p class="mb-landing-kicker">SENIOR DESIGNER</p>
+          <h1 class="mb-landing-title">AI Content Creation</h1>
+          <p class="mb-landing-sub">
+            Here are a few of my AI content creations inspired by Klaviyo email templates.
+          </p>
         </div>
 
-        <div class="email-template-card">
-          <img src="Email_2.jpg" alt="AI generated email template design 2" />
+        <div class="mb-landing-hero-visual">
+          <div class="mb-landing-card">
+            <img
+              class="mb-landing-avatar"
+              src="SOCIALMEDIA_AVATAR.png"
+              alt="Julia Alix avatar"
+              loading="eager"
+            />
+          </div>
         </div>
+
       </div>
     </section>
+
+    <!-- PAGE CONTENT -->
+    <section class="mb-main" id="gallery">
+      <div class="container">
+
+        <!-- SECTION -->
+        <section class="mb-section">
+          <header class="mb-section-head">
+            <div>
+              <h2 class="mb-section-title">Email Template Designs</h2>
+              <p class="mb-section-sub">AI Generated Campaign Emails</p>
+            </div>
+          </header>
+
+          <div class="mb-grid">
+
+            <!-- Card 1 -->
+            <article class="mb-card">
+              <div class="mb-card-top">
+                <h3 class="mb-card-title">Email Design 01</h3>
+              </div>
+
+              <div class="mb-carousel">
+                <div class="mb-track" style="grid-auto-columns: 100%;">
+                  <div class="email-frame">
+                    <img
+                      class="mb-slide"
+                      src="Email_1.jpg"
+                      alt="AI Email Template 1"
+                    />
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="mb-card">
+              <div class="mb-card-top">
+                <h3 class="mb-card-title">Email Design 02</h3>
+              </div>
+
+              <div class="mb-carousel">
+                <div class="mb-track" style="grid-auto-columns: 100%;">
+                  <div class="email-frame">
+                    <img
+                      class="mb-slide"
+                      src="Email_2.jpg"
+                      alt="AI Email Template 2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <footer class="mb-footer">
+          <p>© Julia Jasmin Alix. All rights reserved.</p>
+        </footer>
+
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-    © Julia Jasmin Alix. All rights reserved.
-  </footer>
 </body>
 </html>
