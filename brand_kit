@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brand Kit | Julia Alix</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="marketing-banners.css" />
+
+  <style>
+    .brand-book-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 22px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+
+    .brand-book-carousel {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 22px;
+    }
+
+    .brand-book-track {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      gap: 24px;
+      padding-bottom: 10px;
+    }
+
+    .brand-book-track::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .brand-book-track::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.18);
+      border-radius: 999px;
+    }
+
+    .brand-book-slide {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      background: #fff;
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    .brand-book-slide img {
+      width: 100%;
+      display: block;
+      border-radius: 22px;
+    }
+
+    .brand-book-note {
+      margin-top: 16px;
+      font-size: 0.95rem;
+      opacity: 0.75;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .brand-book-card {
+        padding: 14px;
+        border-radius: 22px;
+      }
+
+      .brand-book-slide {
+        border-radius: 18px;
+      }
+
+      .brand-book-slide img {
+        border-radius: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Back to home">
+        <span class="logo-mark">☾</span>
+        <span class="logo-text">Julia Alix</span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="mb-landing-hero" aria-label="Brand Kit hero">
+      <div class="container mb-landing-hero-inner">
+
+        <div class="mb-landing-hero-copy">
+          <p class="mb-landing-kicker">SENIOR DESIGNER</p>
+          <h1 class="mb-landing-title">Brand Kit</h1>
+          <p class="mb-landing-sub">
+            A visual brand book showcasing logo usage, colors, typography, and brand direction.
+          </p>
+        </div>
+
+        <div class="mb-landing-hero-visual">
+          <div class="mb-landing-card">
+            <img
+              class="mb-landing-avatar"
+              src="SOCIALMEDIA_AVATAR.png"
+              alt="Julia Alix avatar"
+              loading="eager"
+            />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PAGE CONTENT -->
+    <section class="mb-main" id="gallery">
+      <div class="container">
+
+        <section class="mb-section">
+          <header class="mb-section-head">
+            <div>
+              <h2 class="mb-section-title">Skiño Brand Book</h2>
+              <p class="mb-section-sub">Brand Identity • Logo • Colors • Typography</p>
+            </div>
+          </header>
+
+          <article class="mb-card">
+            <div class="mb-card-top">
+              <h3 class="mb-card-title">Brand Kit Preview</h3>
+            </div>
+
+            <div class="brand-book-card">
+              <div class="brand-book-carousel">
+                <div class="brand-book-track">
+
+                  <div class="brand-book-slide">
+                    <img src="1.png" alt="Skiño brand book page 1" />
+                  </div>
+
+                  <div class="brand-book-slide">
+                    <img src="2.png" alt="Skiño brand book page 2" />
+                  </div>
+
+                  <div class="brand-book-slide">
+                    <img src="3.png" alt="Skiño brand book page 3" />
+                  </div>
+
+                  <div class="brand-book-slide">
+                    <img src="4.png" alt="Skiño brand book page 4" />
+                  </div>
+
+                  <div class="brand-book-slide">
+                    <img src="5.png" alt="Skiño brand book page 5" />
+                  </div>
+
+                  <div class="brand-book-slide">
+                    <img src="6.png" alt="Skiño brand book page 6" />
+                  </div>
+
+                  <div class="brand-book-slide">
+                    <img src="7.png" alt="Skiño brand book page 7" />
+                  </div>
+
+                  <div class="brand-book-slide">
+                    <img src="8.png" alt="Skiño brand book page 8" />
+                  </div>
+
+                  <div class="brand-book-slide">
+                    <img src="9.png" alt="Skiño brand book page 9" />
+                  </div>
+
+                  <div class="brand-book-slide">
+                    <img src="10.png" alt="Skiño brand book page 10" />
+                  </div>
+
+                  <div class="brand-book-slide">
+                    <img src="11.png" alt="Skiño brand book page 11" />
+                  </div>
+
+                  <div class="brand-book-slide">
+                    <img src="12.png" alt="Skiño brand book page 12" />
+                  </div>
+
+                  <div class="brand-book-slide">
+                    <img src="13.png" alt="Skiño brand book page 13" />
+                  </div>
+
+                  <div class="brand-book-slide">
+                    <img src="14.png" alt="Skiño brand book page 14" />
+                  </div>
+
+                </div>
+              </div>
+
+              <p class="brand-book-note">Scroll sideways to view the brand book pages.</p>
+            </div>
+          </article>
+        </section>
+
+        <footer class="mb-footer">
+          <p>© Julia Jasmin Alix. All rights reserved.</p>
+        </footer>
+
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
